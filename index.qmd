@@ -15,7 +15,7 @@ execute:
   echo: false
 ---
 
-![](tephritids.jpeg){width=100% style="border-radius:8px; margin-bottom:1.5rem;"}
+![](tephritids.jpeg){width=60% fig-align="center" style="border-radius:8px; margin-bottom:1.5rem;"}
 
 This database covers empirical research on tephritid fruit flies (family **Tephritidae**),
 organised by genus and species. Each page documents active research themes, key papers,
