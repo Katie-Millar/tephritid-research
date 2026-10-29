@@ -1,0 +1,206 @@
+---
+title: "Bactrocera"
+author: ""
+date: last-modified
+date-format: "D MMMM YYYY"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
+    number-sections: true
+    theme: sandstone
+    smooth-scroll: true
+    link-external-icon: true
+    link-external-newwindow: true
+csl: apa.csl
+execute:
+  echo: false
+---
+
+
+
+Described by Macquart in 1835. Primarily Indo-Pacific in distribution, with several species
+now established as invasive pests in Africa, Europe, and the Americas.
+
+**Tribe:** Dacini | **Species:** ~600
+
+![*Bactrocera* sp.](bactrocera1.jpeg){width=60%}
+
+---
+
+## *Bactrocera dorsalis* (Hendel, 1912) {#sec-b-dorsalis}
+
+**Common name:** Oriental fruit fly  
+**Economic importance:** Major invasive pest of mango, guava, papaya, and hundreds of other
+hosts. Established in Africa after 2003.
+
+![*Bactrocera dorsalis* adult](bdorsalis1.jpeg){width=50%}
+
+---
+
+
+### Research {.panel-tabset}
+
+
+
+#### Gut Microbiota
+
+::: {.panel-tabset}
+
+##### Community and composition
+
+::: {.callout-note appearance="minimal"}
+#### *Bactrocera dorsalis* and its gut microbiota: an emerging insect model (2026)
+**Researchers:** Qiongyi Zhou, Hongyu Zhang  
+[Read paper →](https://doi.org/10.3390/insects17070662)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Gut microbiota are involved in adaptation of *B. dorsalis* to temperature and diet stressors (2026)
+**Researchers:** Abir Hafsi, Massimiliano Virgilio  
+[Read paper →](https://hal.science/hal-05774781v1/file/619332.pdf)
+:::
+
+##### Fitness, Immunity & Survival
+
+::: {.callout-note appearance="minimal"}
+#### Excess sucrose in the larval diet alters gut microbiota and reduces body size and longevity (2026)
+**Researchers:** Xiaoyun Jia, Zihua Zhao  
+[Read paper →](https://link.springer.com/article/10.1007/s13744-026-01404-8)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### BdNOX5 mediates gut microbiota homeostasis via ROS regulation (2026)
+**Researchers:** Tian Zeng, Yi-juan Xu  
+[Read paper →](https://scijournals.onlinelibrary.wiley.com/doi/10.1002/ps.70506)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Cuticle-associated microbiota suppress fungal infection through immune and chemical defences (2026)
+**Researchers:** Kamil Kabir, Hongyu Zhang  
+[Read paper →](https://scijournals.onlinelibrary.wiley.com/doi/10.1002/ps.70704)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Gut-microbiota reshaping by oxytetracycline residues threatens life-history traits (2026)
+**Researchers:** Yuxin Yang, Zihua Zhao  
+[Read paper →](https://www.sciencedirect.com/science/article/abs/pii/S0304389426017681)
+:::
+
+##### Behaviour
+
+::: {.callout-note appearance="minimal"}
+#### Bacterial-driven odorant receptor expression shifts alter olfactory behaviour (2026)
+**Researchers:** Muyang He, Yonghao Lu  
+[Read paper →](https://resjournals.onlinelibrary.wiley.com/doi/full/10.1111/een.70045)
+:::
+
+##### Pest Control Applications
+
+::: {.callout-note appearance="minimal"}
+#### RNAi-mediated immune suppression enhances *Serratia marcescens* pathogenicity (2026)
+**Researchers:** B. Wei, Y. Liu  
+[Read paper →](https://doi.org/10.1007/s10340)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Novel defensin-like antimicrobial peptides as promising targets for control (2026)
+**Researchers:** Bing Xie, Bin Song  
+[Read paper →](https://scijournals.onlinelibrary.wiley.com/doi/10.1002/ps.70805)
+:::
+
+:::
+
+#### Gene Drive
+
+
+::: {.panel-tabset}
+
+##### White Pupae Lines
+
+::: {.callout-note appearance="minimal"}
+#### CRISPR/Cas9-based white pupae mutant lines in *Bactrocera* spp. for sterile insect technique applications (2026)
+CRISPR/Cas9 knockout of the *white pupae* gene established *wp* lines in *B. dorsalis*,
+*B. correcta*, and *B. oleae*, supporting genetic sexing system development for SIT.  
+**Researchers:** Chrysanthi Ioannidou, Kostas Bourtzis  
+[Read paper →](https://doi.org/10.1111/1744-7917.70190)
+:::
+
+##### CRISPR Toolkit and pgSIT
+
+::: {.callout-note appearance="minimal"}
+#### CRISPR/Cas9-mediated genome editing in the management of *Bactrocera dorsalis* (2026)
+Workflow for RNP-based genome editing as a foundation for precision-guided SIT and gene
+drive programmes in *B. dorsalis*.  
+**Researchers:** (first author TBC), (last author TBC)  
+[Read paper →](https://link.springer.com/protocol/10.1007/978-1-0716-4746-2_18)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Next-generation genetic biocontrol technologies for tephritid pests (2026)
+CRISPR/Cas9 knockout of *Bdspr* (sex peptide receptor) substantially reduced female
+fertility, oviposition rate, and egg viability in *B. dorsalis*; targeted edits of
+spermatogenesis gene *Bdtektin1* impaired sperm development and ejaculate quality.  
+**Researchers:** (first author TBC), (last author TBC)  
+[Read paper →](https://doi.org/10.1080/19336934.2026.2682509)
+:::
+
+:::
+#### Transcriptomics
+
+*No papers added yet.*
+
+#### Researchers
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+::: {.callout-note appearance="minimal"}
+#### Hong-Yu Zhang
+**Affiliation:** Huazhong Agricultural University, China  
+**Themes:** Gut microbiota, immune defence, RNAi  
+[ResearchGate →](https://www.researchgate.net/profile/Hongyu-Zhang-61)
+
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.callout-note appearance="minimal"}
+#### Zihua Zhao
+**Affiliation:** China Agricultural University  
+**Themes:** Life-history, diet, gut microbiota composition  
+[Google Scholar →](https://scholar.google.com/citations?user=-7U97kMAAAAJ&hl=zh-CN)
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.callout-note appearance="minimal"}
+#### Massimiliano Virgilio
+**Affiliation:** Royal Museum for Central Africa, Belgium  
+**Themes:** Phylogenetics, population genetics, microbiome adaptation  
+[Affiliation →](https://www.africamuseum.be/en/staff/896)  
+[Google Scholar →](https://scholar.google.com/citations?user=Nl7sTl8AAAAJ&hl=en&oi=sra)
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.callout-note appearance="minimal"}
+#### Tian Zeng
+**Affiliation:** (TBC)  
+**Themes:** Gut homeostasis, ROS regulation  
+[ResearchGate →](https://www.researchgate.net/profile/Tian-Zeng-22)
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.callout-note appearance="minimal"}
+#### Kamil Kabir
+**Affiliation:** (TBC)  
+**Themes:** Cuticle microbiota, immune defence, fungal resistance  
+[ORCID →](https://orcid.org/0009-0006-3893-7423)
+:::
+:::
+
+
+:::

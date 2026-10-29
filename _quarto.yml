@@ -1,0 +1,55 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Tephritidae Research"
+  description: "A structured review of tephritid fruit fly research by genus and species"
+  
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - text: Genera
+        menu:
+          - href: bactrocera.qmd
+            text: "*Bactrocera*"
+    right:
+      - icon: github
+        href: https://github.com/Katie-Millar
+
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Overview"
+        contents:
+          - index.qmd
+      - section: "Genera"
+        contents:
+          - bactrocera.qmd
+          - ceratitis.qmd
+
+  search: true
+  
+  page-footer:
+    left: "Tephritidae Research Group"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-title: "On this page"
+    number-sections: true
+    smooth-scroll: true
+    link-external-icon: true
+    link-external-newwindow: true
+    citations-hover: true
+
+csl: apa.csl
+
+execute:
+  echo: false
+  warning: false
