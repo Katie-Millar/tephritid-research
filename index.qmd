@@ -17,9 +17,7 @@ execute:
 
 ![](tephritids.jpeg){width=60% fig-align="center" style="border-radius:8px; margin-bottom:1.5rem;"}
 
-This database covers empirical research on tephritid fruit flies (family **Tephritidae**),
-organised by genus and species. Each page documents active research themes, key papers,
-and the researchers behind them. Currently focused on 2026 publications.
+This database covers empirical research on Tephritid fruit flies (family **Tephritidae**), organised by genus and species. Each page shows active research themes, recent papers, and the researchers currently in this work. This page currently shows papers from 2026.
 
 ---
 
@@ -47,14 +45,7 @@ Afrotropical, *C. capitata* cosmopolitan
 :::
 :::
 
-::: {.g-col-12 .g-col-md-4}
-::: {.callout-note appearance="minimal"}
-### *Anastrepha*
-~328 species · Tribe Toxotrypanini  
-Neotropical  
-**Research:** Coming soon  
-:::
-:::
+
 
 :::
 

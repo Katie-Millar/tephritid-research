@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -14,10 +14,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -41,10 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ee70a2fd9df5cf4968f0e9381ab63cde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1b2e80279679444173d547537ea77c9a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,6 +109,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./bactrocera.html">
  <span class="dropdown-text"><em>Bactrocera</em></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ceratitis.qmd.qmd">
+ <span class="dropdown-text"><em>Ceratitis</em></span></a>
   </li>  
     </ul>
   </li>
@@ -197,11 +204,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#ceratitis" id="toc-ceratitis" class="nav-link active" data-scroll-target="#ceratitis"><span class="header-section-number">1</span> <em>Ceratitis</em></a>
+  <li><a href="#sec-c-capitata" id="toc-sec-c-capitata" class="nav-link active" data-scroll-target="#sec-c-capitata"><span class="header-section-number">1</span> <em>Ceratitis capitata</em> (Wiedemann, 1824)</a>
   <ul class="collapse">
-  <li><a href="#sec-c-capitata" id="toc-sec-c-capitata" class="nav-link" data-scroll-target="#sec-c-capitata"><span class="header-section-number">1.1</span> <em>Ceratitis capitata</em> (Wiedemann, 1824)</a>
+  <li><a href="#research" id="toc-research" class="nav-link" data-scroll-target="#research"><span class="header-section-number">1.1</span> Research</a>
   <ul class="collapse">
-  <li><a href="#research" id="toc-research" class="nav-link" data-scroll-target="#research"><span class="header-section-number">1.1.1</span> Research</a></li>
+  <li><a href="#gut-microbiota" id="toc-gut-microbiota" class="nav-link" data-scroll-target="#gut-microbiota"><span class="header-section-number">1.1.1</span> Gut Microbiota</a></li>
+  <li><a href="#gene-drives" id="toc-gene-drives" class="nav-link" data-scroll-target="#gene-drives"><span class="header-section-number">1.1.2</span> Gene Drives</a></li>
+  <li><a href="#sit" id="toc-sit" class="nav-link" data-scroll-target="#sit"><span class="header-section-number">1.1.3</span> SIT</a></li>
+  <li><a href="#insecticide-resistance" id="toc-insecticide-resistance" class="nav-link" data-scroll-target="#insecticide-resistance"><span class="header-section-number">1.1.4</span> Insecticide Resistance</a></li>
+  <li><a href="#ecology-behaviour" id="toc-ecology-behaviour" class="nav-link" data-scroll-target="#ecology-behaviour"><span class="header-section-number">1.1.5</span> Ecology &amp; Behaviour</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">1.1.6</span> Methods</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -235,30 +247,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ceratitis" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> <em>Ceratitis</em></h1>
-<p>Described by Macleay in 1829. Primarily Afrotropical in distribution, with <em>C. capitata</em> now cosmopolitan.</p>
-<p><strong>Tribe:</strong> Ceratitidini | <strong>Species:</strong> ~78</p>
+<p>Described by Macleay in 1829.</p>
+<p><strong>Tribe:</strong> Ceratitidini | <strong>Species:</strong> ~80–100</p>
 <hr>
-<section id="sec-c-capitata" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="sec-c-capitata"><span class="header-section-number">1.1</span> <em>Ceratitis capitata</em> (Wiedemann, 1824)</h2>
+<section id="sec-c-capitata" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> <em>Ceratitis capitata</em> (Wiedemann, 1824)</h1>
 <p><strong>Common name:</strong> Mediterranean fruit fly (Medfly)<br>
 <strong>Economic importance:</strong> One of the world’s most polyphagous pests, infesting over 300 host species. Established on every inhabited continent except Asia. Managed primarily through the Sterile Insect Technique (SIT).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="ccapitata.jpeg" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption><em>Ceratitis capitata adult</em></figcaption>
+<figcaption><em>Ceratitis capitata</em> adult</figcaption>
 </figure>
 </div>
 <hr>
-<section id="research" class="level3 panel-tabset" data-number="1.1.1">
-<h3 class="panel-tabset anchored" data-number="1.1.1" data-anchor-id="research"><span class="header-section-number">1.1.1</span> Research</h3>
-<section id="gut-microbiota" class="level4" data-number="1.1.1.1">
-<h4 data-number="1.1.1.1" class="anchored" data-anchor-id="gut-microbiota"><span class="header-section-number">1.1.1.1</span> Gut Microbiota</h4>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Community and Composition</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Fitness, Immunity &amp; Survival</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Behaviour</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Pest Control Applications</a></li></ul>
-<div class="tab-content">
+<section id="research" class="level2 panel-tabset" data-number="1.1">
+<h2 class="panel-tabset anchored" data-number="1.1" data-anchor-id="research"><span class="header-section-number">1.1</span> Research</h2>
+<section id="gut-microbiota" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="gut-microbiota"><span class="header-section-number">1.1.1</span> Gut Microbiota</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="gut">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Community and Composition</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Fitness, Immunity &amp; Survival</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Behaviour</a></li></ul>
+<div class="tab-content" data-group="gut">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Full-length 16S rRNA gene sequencing resolution reveals variable compositional features of Medfly gut microbiomes (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Charles J. Mason, Scott M. Geib<br>
+<a href="https://academic.oup.com/ismecommun/advance-article/doi/10.1093/ismeco/ycag292/8898642">Read paper →</a></p>
+</div>
+</div>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -281,6 +305,20 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><em>Enterobacter</em> supplement and ambient conditions determine the performance of sterile male Mediterranean fruit flies (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Panagiota Koskinioti, Nikos T. Papadopoulos<br>
+<a href="https://resjournals.onlinelibrary.wiley.com/doi/full/10.1111/phen.70054">Read paper →</a></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Note</span><em>Ceratitis capitata</em> microbiota and its effect on environmental stress tolerance: making flies stronger (2026)
 </div>
 </div>
@@ -289,34 +327,46 @@ ul.task-list li input[type="checkbox"] {
 <a href="https://doi.org/10.1111/1744-7917.70010">Read paper →</a></p>
 </div>
 </div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p><em>No papers added yet.</em></p>
-</div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Probiotic modulation of gut microbiota enhances immunity and nutrition in SIT <em>C. capitata</em> sterile males (2026)
+<span class="screen-reader-only">Note</span><em>Enterobacter</em>-based dietary supplements in both larvae and adult diet affect thermal response of sterile males (2026)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Researchers:</strong> Kamel Charaabi, (last author TBC)<br>
-<a href="https://doi.org/10.1007/s00248-026-02754-x">Read paper →</a></p>
+<p><strong>Researchers:</strong> Georgia Papadogiorgou, Nikos T. Papadopoulos<br>
+<a href="https://www.cambridge.org/core/journals/bulletin-of-entomological-research/article/enterobacterbased-dietary-supplements-in-both-larvae-and-adult-diet-affect-thermal-response-of-sterile-males/A1E682C2632276FCC5F8EE472B13DB0B">Read paper →</a></p>
 </div>
 </div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Antimicrobial feeding of parental adults reduces offspring tolerance to chemical stress in <em>Ceratitis capitata</em> (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Alfonsina Palladini, Juan Rull<br>
+<a href="https://doi.org/10.1111/aen.70117">Read paper →</a></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><em>No papers added yet.</em></p>
 </div>
 </div>
 </div>
 </section>
-<section id="gene-drives" class="level4" data-number="1.1.1.2">
-<h4 data-number="1.1.1.2" class="anchored" data-anchor-id="gene-drives"><span class="header-section-number">1.1.1.2</span> Gene Drives</h4>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">CRISPR Tooling</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Cisgenic Sexing Strains</a></li></ul>
-<div class="tab-content">
+<section id="gene-drives" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="gene-drives"><span class="header-section-number">1.1.2</span> Gene Drives</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="genedrives">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">CRISPR Tools</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Cisgenic Sexing Strains</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Sex Determination</a></li></ul>
+<div class="tab-content" data-group="genedrives">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -328,7 +378,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Researchers:</strong> Amber S. K., Philip T. Leftwich<br>
+<p><strong>Researchers:</strong> Amber S. K. Hall, Philip T. Leftwich<br>
 <a href="https://doi.org/10.64898/2026.04.21.719894">Read paper →</a></p>
 </div>
 </div>
@@ -349,11 +399,309 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>DsiRNA-mediated silencing of <em>C. capitata</em> transformer or transformer-2 leads to masculinisation of XX embryos and systemic gene silencing in ovaries (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Gennaro Volpe, Giuseppe Saccone<br>
+<a href="https://doi.org/10.1111/1744-7917.70173">Read paper →</a></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
-<section id="researchers" class="level4" data-number="1.1.1.3">
-<h4 data-number="1.1.1.3" class="anchored" data-anchor-id="researchers"><span class="header-section-number">1.1.1.3</span> Researchers</h4>
+<section id="sit" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="sit"><span class="header-section-number">1.1.3</span> SIT</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="sit">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Sterile Male Quality</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Genetic Sexing</a></li></ul>
+<div class="tab-content" data-group="sit">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Probiotic modulation of gut microbiota enhances immunity and nutrition in SIT <em>C. capitata</em> sterile males (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Kamel Charaabi, Meriem Msaad Guerfali<br>
+<a href="https://doi.org/10.1007/s00248-026-02754-x">Read paper →</a></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Holobiont integrity in <em>Ceratitis capitata</em> enhances larval development: implications for the sterile insect technique (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Alfonsina Palladini, Juan Rull<br>
+<a href="https://doi.org/10.1111/aen.70063">Read paper →</a></p>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Functional validation of a white pupae minimal gene construct in <em>Ceratitis capitata</em> (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Lucas Henrique Figueiredo Prates, Marc F. Schetelig<br>
+<a href="https://doi.org/10.1111/1744-7917.70058">Read paper →</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="insecticide-resistance" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="insecticide-resistance"><span class="header-section-number">1.1.4</span> Insecticide Resistance</h3>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Reduced fitness cost accounts for the stability of a malathion-resistant heterogeneous duplication haplotype in <em>Ceratitis capitata</em> field populations (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Rabeh Arouri, Félix Ortego<br>
+<a href="https://doi.org/10.1002/ps.71269">Read paper →</a></p>
+</div>
+</div>
+</section>
+<section id="ecology-behaviour" class="level3" data-number="1.1.5">
+<h3 data-number="1.1.5" class="anchored" data-anchor-id="ecology-behaviour"><span class="header-section-number">1.1.5</span> Ecology &amp; Behaviour</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="ecology">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Dispersal &amp; Thermal Biology</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Monitoring &amp; Detection</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">Chemical Ecology</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false" href="">Biopesticides &amp; Alternative Control</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-5" role="tab" aria-controls="tabset-4-5" aria-selected="false" href="">Sleep &amp; Ageing</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-6" role="tab" aria-controls="tabset-4-6" aria-selected="false" href="">Stress Physiology &amp; Development</a></li></ul>
+<div class="tab-content" data-group="ecology">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Thermal acclimation and environment drive field dispersal patterns of adult Mediterranean fruit flies (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Eleftheria-Maria D. Bali, Nikos T. Papadopoulos<br>
+<a href="https://doi.org/10.1111/een.70147">Read paper →</a></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Analyzing Mediterranean fruit fly <em>Ceratitis capitata</em> dispersal from South to Northward in Türkiye (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Mohammed Ahmed Mohammed, Mehmet Bora Kaydan<br>
+<a href="https://link.springer.com/article/10.1007/s12600-025-01350-y">Read paper →</a></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Urban-agricultural interface: assessing the effect of urban habitat characteristics on the occurrence of the Mediterranean fruit fly in peri-urban citrus orchards (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Carmel Katz, Yafit Cohen<br>
+<a href="https://link.springer.com/article/10.1007/s10340-025-01968-1">Read paper →</a></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Seasonal reinfestation of <em>Ceratitis capitata</em> in continental climates: the role of fruit transport in Uşak Province (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> (first author TBC), (last author TBC)<br>
+<a href="https://link.springer.com/article/10.1007/s10341-026-01825-0">Read paper →</a></p>
+</div>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Novel approaches for the detection of low-density Mediterranean fruit fly populations (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Eleftheria-Maria D. Bali, Nikos T. Papadopoulos<br>
+<a href="https://link.springer.com/article/10.1007/s10530-026-03917-0">Read paper →</a></p>
+</div>
+</div>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Chemical profile of the Mediterranean fruit fly <em>Ceratitis capitata</em> collected from different agricultural Egyptian systems (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Ismail R. El-Gendy, Abdelbaky A. Khodair<br>
+<a href="https://doi.org/10.21608/jpces.2026.510311.1016">Read paper →</a></p>
+</div>
+</div>
+</div>
+<div id="tabset-4-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-4-tab">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Biological and biochemical effects of olive mill wastewater on <em>Ceratitis capitata</em> (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Tugberk Tuncyurek, Neslihan Gulec<br>
+<a href="https://doi.org/10.1134/S1062359025612935">Read paper →</a></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Horizontal and vertical transmission of <em>Beauveria bassiana</em>: effects on population growth rates in <em>Ceratitis capitata</em> (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Salvador Flores, Jorge Toledo<br>
+<a href="https://doi.org/10.1111/eea.70144">Read paper →</a></p>
+</div>
+</div>
+</div>
+<div id="tabset-4-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-5-tab">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Sleep bout length and nighttime activity predict longevity in medflies (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Poorbita Kundu, Hans-Georg Müller<br>
+<a href="https://doi.org/10.1038/s41514-026-00481-8">Read paper →</a></p>
+</div>
+</div>
+</div>
+<div id="tabset-4-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-6-tab">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Egg-stage desiccation reduces developmental recovery and reveals strain-dependent <em>Wolbachia</em>-associated costs in <em>Ceratitis capitata</em> (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> M. Kamilari, A. A. Augustinos<br>
+<a href="https://doi.org/10.64898/2026.04.21.719827">Read paper →</a></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Impact of hydric stress during pupal development on adult morphology in <em>Ceratitis capitata</em> (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Paraschos N. Prekas, Nikos T. Papadopoulos<br>
+<a href="https://doi.org/10.1016/j.jinsphys.2026.104989">Read paper →</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="methods" class="level3" data-number="1.1.6">
+<h3 data-number="1.1.6" class="anchored" data-anchor-id="methods"><span class="header-section-number">1.1.6</span> Methods</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="methods">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">Spectroscopy &amp; Imaging</a></li></ul>
+<div class="tab-content" data-group="methods">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>A rapid and non-destructive method to discriminate irradiated <em>Ceratitis capitata</em> using near-infrared spectroscopy (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Peishih Liang, Charles J. Mason<br>
+<a href="https://doi.org/10.1093/jee/toae290">Read paper →</a></p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Deep learning-based classification of in vivo embryonic development stages in <em>Ceratitis capitata</em> using real-time microscopy images (2026)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Researchers:</strong> Tugberk Tuncyurek, Hanife Yandayan Genc<br>
+<a href="https://doi.org/10.1002/jez.b.70042">Read paper →</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="researchers" class="level4" data-number="1.1.6.1">
+<h4 data-number="1.1.6.1" class="anchored" data-anchor-id="researchers"><span class="header-section-number">1.1.6.1</span> Researchers</h4>
 <div class="grid">
 <div class="g-col-12 g-col-md-4">
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
@@ -367,7 +715,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Affiliation:</strong> University of East Anglia, UK<br>
-<strong>Themes:</strong> Gene drives, gut microbiota <a href="https://philip-leftwich.github.io">Personal website →</a></p>
+<strong>Themes:</strong> Gut microbiota, gene drives, CRISPR tooling<br>
+<a href="https://philip-leftwich.github.io">Personal website →</a></p>
 </div>
 </div>
 </div>
@@ -383,7 +732,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Affiliation:</strong> University of East Anglia, UK<br>
-<strong>Themes:</strong> Gut microbiota, development gene drives <a href="https://scholar.google.com/citations?user=aE7Q7CMAAAAJ&amp;hl=en">Google Scholar →</a></p>
+<strong>Themes:</strong> Gut microbiota, gene drives<br>
+<a href="https://scholar.google.com/citations?user=aE7Q7CMAAAAJ&amp;hl=en">Google Scholar →</a></p>
 </div>
 </div>
 </div>
@@ -394,12 +744,13 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Charles Mason
+<span class="screen-reader-only">Note</span>Charles J. Mason
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Affiliation:</strong> (TBC)<br>
-<strong>Themes:</strong> (TBC) <a href="https://scholar.google.com/citations?hl=en&amp;user=ih4bYs8AAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar →</a></p>
+<p><strong>Affiliation:</strong> USDA-ARS, USA<br>
+<strong>Themes:</strong> Gut microbiome composition, SIT quality control<br>
+<a href="https://scholar.google.com/citations?hl=en&amp;user=ih4bYs8AAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar →</a></p>
 </div>
 </div>
 </div>
@@ -414,7 +765,41 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Affiliation:</strong> Imperial College London, UK <strong>Themes:</strong> Cisgenic sexing strains, gene drives <a href="https://scholar.google.com/citations?user=rXXpQNwAAAAJ&amp;hl=it">Google Scholar →</a></p>
+<p><strong>Affiliation:</strong> Imperial College London, UK<br>
+<strong>Themes:</strong> Cisgenic sexing strains, gene drives<br>
+<a href="https://scholar.google.com/citations?user=rXXpQNwAAAAJ&amp;hl=it">Google Scholar →</a></p>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-4">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Nikos T. Papadopoulos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Affiliation:</strong> University of Thessaly, Greece<br>
+<strong>Themes:</strong> Dispersal, thermal biology, gut microbiota, development</p>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-4">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Alfonsina Palladini
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Affiliation:</strong> (TBC — Argentina)<br>
+<strong>Themes:</strong> Microbiota, stress tolerance, SIT, holobiont</p>
 </div>
 </div>
 </div>

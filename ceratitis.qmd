@@ -18,34 +18,37 @@ execute:
   echo: false
 ---
 
-# *Ceratitis*
 
-Described by Macleay in 1829. Primarily Afrotropical in distribution, with *C. capitata*
-now cosmopolitan.
+Described by Macleay in 1829.
 
-**Tribe:** Ceratitidini | **Species:** ~78
+**Tribe:** Ceratitidini | **Species:** ~80–100
 
 ---
 
-## *Ceratitis capitata* (Wiedemann, 1824) {#sec-c-capitata}
+# *Ceratitis capitata* (Wiedemann, 1824) {#sec-c-capitata}
 
 **Common name:** Mediterranean fruit fly (Medfly)  
 **Economic importance:** One of the world's most polyphagous pests, infesting over 300
 host species. Established on every inhabited continent except Asia. Managed primarily
 through the Sterile Insect Technique (SIT).
 
-![*Ceratitis capitata adult*](ccapitata.jpeg){width=60%}
+![*Ceratitis capitata* adult](ccapitata.jpeg){width=60%}
 
 ---
 
+## Research {.panel-tabset}
 
-### Research {.panel-tabset}
+### Gut Microbiota
 
-#### Gut Microbiota
-
-::: {.panel-tabset}
+::: {.panel-tabset group="gut"}
 
 ##### Community and Composition
+
+::: {.callout-note appearance="minimal"}
+#### Full-length 16S rRNA gene sequencing resolution reveals variable compositional features of Medfly gut microbiomes (2026)
+**Researchers:** Charles J. Mason, Scott M. Geib  
+[Read paper →](https://academic.oup.com/ismecommun/advance-article/doi/10.1093/ismeco/ycag292/8898642)
+:::
 
 ::: {.callout-note appearance="minimal"}
 #### Dominance of *Zygosaccharomyces* and shifts in bacterial pathways: effects of antimicrobials on composition and diversity of the *C. capitata* bacterial and fungal microbiome (2026)
@@ -56,34 +59,44 @@ through the Sterile Insect Technique (SIT).
 ##### Fitness, Immunity & Survival
 
 ::: {.callout-note appearance="minimal"}
+#### *Enterobacter* supplement and ambient conditions determine the performance of sterile male Mediterranean fruit flies (2026)
+**Researchers:** Panagiota Koskinioti, Nikos T. Papadopoulos  
+[Read paper →](https://resjournals.onlinelibrary.wiley.com/doi/full/10.1111/phen.70054)
+:::
+
+::: {.callout-note appearance="minimal"}
 #### *Ceratitis capitata* microbiota and its effect on environmental stress tolerance: making flies stronger (2026)
 **Researchers:** Alfonsina Palladini, Juan Rull  
 [Read paper →](https://doi.org/10.1111/1744-7917.70010)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### *Enterobacter*-based dietary supplements in both larvae and adult diet affect thermal response of sterile males (2026)
+**Researchers:** Georgia Papadogiorgou, Nikos T. Papadopoulos  
+[Read paper →](https://www.cambridge.org/core/journals/bulletin-of-entomological-research/article/enterobacterbased-dietary-supplements-in-both-larvae-and-adult-diet-affect-thermal-response-of-sterile-males/A1E682C2632276FCC5F8EE472B13DB0B)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Antimicrobial feeding of parental adults reduces offspring tolerance to chemical stress in *Ceratitis capitata* (2026)
+**Researchers:** Alfonsina Palladini, Juan Rull  
+[Read paper →](https://doi.org/10.1111/aen.70117)
 :::
 
 ##### Behaviour
 
 *No papers added yet.*
 
-##### Pest Control Applications
-
-::: {.callout-note appearance="minimal"}
-#### Probiotic modulation of gut microbiota enhances immunity and nutrition in SIT *C. capitata* sterile males (2026)
-**Researchers:** Kamel Charaabi, (last author TBC)  
-[Read paper →](https://doi.org/10.1007/s00248-026-02754-x)
 :::
 
-:::
+### Gene Drives
 
-#### Gene Drives
+::: {.panel-tabset group="genedrives"}
 
-::: {.panel-tabset}
-
-##### CRISPR Tooling
+##### CRISPR Tools
 
 ::: {.callout-note appearance="minimal"}
 #### A novel polymerase III promoter for gene editing in *Ceratitis capitata* (2026)
-**Researchers:** Amber S. K., Philip T. Leftwich  
+**Researchers:** Amber S. K. Hall, Philip T. Leftwich  
 [Read paper →](https://doi.org/10.64898/2026.04.21.719894)
 :::
 
@@ -93,6 +106,154 @@ through the Sterile Insect Technique (SIT).
 #### Generating cisgenic sexing strains in insect pests (2026)
 **Researchers:** Serafima Davydova, Angela Meccariello  
 [Read paper →](https://www.nature.com/articles/s42003-026-09624-9)
+:::
+
+##### Sex Determination
+
+::: {.callout-note appearance="minimal"}
+#### DsiRNA-mediated silencing of *C. capitata* transformer or transformer-2 leads to masculinisation of XX embryos and systemic gene silencing in ovaries (2026)
+**Researchers:** Gennaro Volpe, Giuseppe Saccone  
+[Read paper →](https://doi.org/10.1111/1744-7917.70173)
+:::
+
+:::
+
+### SIT
+
+::: {.panel-tabset group="sit"}
+
+##### Sterile Male Quality
+
+::: {.callout-note appearance="minimal"}
+#### Probiotic modulation of gut microbiota enhances immunity and nutrition in SIT *C. capitata* sterile males (2026)
+**Researchers:** Kamel Charaabi, Meriem Msaad Guerfali  
+[Read paper →](https://doi.org/10.1007/s00248-026-02754-x)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Holobiont integrity in *Ceratitis capitata* enhances larval development: implications for the sterile insect technique (2026)
+**Researchers:** Alfonsina Palladini, Juan Rull  
+[Read paper →](https://doi.org/10.1111/aen.70063)
+:::
+
+##### Genetic Sexing
+
+::: {.callout-note appearance="minimal"}
+#### Functional validation of a white pupae minimal gene construct in *Ceratitis capitata* (2026)
+**Researchers:** Lucas Henrique Figueiredo Prates, Marc F. Schetelig  
+[Read paper →](https://doi.org/10.1111/1744-7917.70058)
+:::
+
+:::
+
+### Insecticide Resistance
+
+::: {.callout-note appearance="minimal"}
+#### Reduced fitness cost accounts for the stability of a malathion-resistant heterogeneous duplication haplotype in *Ceratitis capitata* field populations (2026)
+**Researchers:** Rabeh Arouri, Félix Ortego  
+[Read paper →](https://doi.org/10.1002/ps.71269)
+:::
+
+### Ecology & Behaviour
+
+::: {.panel-tabset group="ecology"}
+
+##### Dispersal & Thermal Biology
+
+::: {.callout-note appearance="minimal"}
+#### Thermal acclimation and environment drive field dispersal patterns of adult Mediterranean fruit flies (2026)
+**Researchers:** Eleftheria-Maria D. Bali, Nikos T. Papadopoulos  
+[Read paper →](https://doi.org/10.1111/een.70147)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Analyzing Mediterranean fruit fly *Ceratitis capitata* dispersal from South to Northward in Türkiye (2026)
+**Researchers:** Mohammed Ahmed Mohammed, Mehmet Bora Kaydan  
+[Read paper →](https://link.springer.com/article/10.1007/s12600-025-01350-y)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Urban-agricultural interface: assessing the effect of urban habitat characteristics on the occurrence of the Mediterranean fruit fly in peri-urban citrus orchards (2026)
+**Researchers:** Carmel Katz, Yafit Cohen  
+[Read paper →](https://link.springer.com/article/10.1007/s10340-025-01968-1)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Seasonal reinfestation of *Ceratitis capitata* in continental climates: the role of fruit transport in Uşak Province (2026)
+**Researchers:** (first author TBC), (last author TBC)  
+[Read paper →](https://link.springer.com/article/10.1007/s10341-026-01825-0)
+:::
+
+##### Monitoring & Detection
+
+::: {.callout-note appearance="minimal"}
+#### Novel approaches for the detection of low-density Mediterranean fruit fly populations (2026)
+**Researchers:** Eleftheria-Maria D. Bali, Nikos T. Papadopoulos  
+[Read paper →](https://link.springer.com/article/10.1007/s10530-026-03917-0)
+:::
+
+##### Chemical Ecology
+
+::: {.callout-note appearance="minimal"}
+#### Chemical profile of the Mediterranean fruit fly *Ceratitis capitata* collected from different agricultural Egyptian systems (2026)
+**Researchers:** Ismail R. El-Gendy, Abdelbaky A. Khodair  
+[Read paper →](https://doi.org/10.21608/jpces.2026.510311.1016)
+:::
+
+##### Biopesticides & Alternative Control
+
+::: {.callout-note appearance="minimal"}
+#### Biological and biochemical effects of olive mill wastewater on *Ceratitis capitata* (2026)
+**Researchers:** Tugberk Tuncyurek, Neslihan Gulec  
+[Read paper →](https://doi.org/10.1134/S1062359025612935)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Horizontal and vertical transmission of *Beauveria bassiana*: effects on population growth rates in *Ceratitis capitata* (2026)
+**Researchers:** Salvador Flores, Jorge Toledo  
+[Read paper →](https://doi.org/10.1111/eea.70144)
+:::
+
+##### Sleep & Ageing
+
+::: {.callout-note appearance="minimal"}
+#### Sleep bout length and nighttime activity predict longevity in medflies (2026)
+**Researchers:** Poorbita Kundu, Hans-Georg Müller  
+[Read paper →](https://doi.org/10.1038/s41514-026-00481-8)
+:::
+
+##### Stress Physiology & Development
+
+::: {.callout-note appearance="minimal"}
+#### Egg-stage desiccation reduces developmental recovery and reveals strain-dependent *Wolbachia*-associated costs in *Ceratitis capitata* (2026)
+**Researchers:** M. Kamilari, A. A. Augustinos  
+[Read paper →](https://doi.org/10.64898/2026.04.21.719827)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Impact of hydric stress during pupal development on adult morphology in *Ceratitis capitata* (2026)
+**Researchers:** Paraschos N. Prekas, Nikos T. Papadopoulos  
+[Read paper →](https://doi.org/10.1016/j.jinsphys.2026.104989)
+:::
+
+:::
+
+### Methods
+
+::: {.panel-tabset group="methods"}
+
+##### Spectroscopy & Imaging
+
+::: {.callout-note appearance="minimal"}
+#### A rapid and non-destructive method to discriminate irradiated *Ceratitis capitata* using near-infrared spectroscopy (2026)
+**Researchers:** Peishih Liang, Charles J. Mason  
+[Read paper →](https://doi.org/10.1093/jee/toae290)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Deep learning-based classification of in vivo embryonic development stages in *Ceratitis capitata* using real-time microscopy images (2026)
+**Researchers:** Tugberk Tuncyurek, Hanife Yandayan Genc  
+[Read paper →](https://doi.org/10.1002/jez.b.70042)
 :::
 
 :::
@@ -105,7 +266,7 @@ through the Sterile Insect Technique (SIT).
 ::: {.callout-note appearance="minimal"}
 #### Philip Leftwich
 **Affiliation:** University of East Anglia, UK  
-**Themes:** Gene drives, gut microbiota
+**Themes:** Gut microbiota, gene drives, CRISPR tooling  
 [Personal website →](https://philip-leftwich.github.io)
 :::
 :::
@@ -114,30 +275,42 @@ through the Sterile Insect Technique (SIT).
 ::: {.callout-note appearance="minimal"}
 #### Tracey Chapman
 **Affiliation:** University of East Anglia, UK  
-**Themes:** Gut microbiota, development gene drives 
+**Themes:** Gut microbiota, gene drives  
 [Google Scholar →](https://scholar.google.com/citations?user=aE7Q7CMAAAAJ&hl=en)
 :::
 :::
 
-
-
 ::: {.g-col-12 .g-col-md-4}
 ::: {.callout-note appearance="minimal"}
-#### Charles Mason
-**Affiliation:** (TBC)  
-**Themes:** (TBC)
+#### Charles J. Mason
+**Affiliation:** USDA-ARS, USA  
+**Themes:** Gut microbiome composition, SIT quality control  
 [Google Scholar →](https://scholar.google.com/citations?hl=en&user=ih4bYs8AAAAJ&view_op=list_works&sortby=pubdate)
 :::
 :::
 
-
-
 ::: {.g-col-12 .g-col-md-4}
 ::: {.callout-note appearance="minimal"}
 #### Angela Meccariello
-**Affiliation:** Imperial College London, UK 
-**Themes:** Cisgenic sexing strains, gene drives
+**Affiliation:** Imperial College London, UK  
+**Themes:** Cisgenic sexing strains, gene drives  
 [Google Scholar →](https://scholar.google.com/citations?user=rXXpQNwAAAAJ&hl=it)
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.callout-note appearance="minimal"}
+#### Nikos T. Papadopoulos
+**Affiliation:** University of Thessaly, Greece  
+**Themes:** Dispersal, thermal biology, gut microbiota, development  
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.callout-note appearance="minimal"}
+#### Alfonsina Palladini
+**Affiliation:** (TBC — Argentina)  
+**Themes:** Microbiota, stress tolerance, SIT, holobiont  
 :::
 :::
 
