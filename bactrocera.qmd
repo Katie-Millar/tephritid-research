@@ -18,8 +18,6 @@ execute:
   echo: false
 ---
 
-
-
 Described by Macquart in 1835. Primarily Indo-Pacific in distribution, with several species
 now established as invasive pests in Africa, Europe, and the Americas.
 
@@ -39,16 +37,13 @@ hosts. Established in Africa after 2003.
 
 ---
 
-
 ### Research {.panel-tabset}
-
-
 
 #### Gut Microbiota
 
-::: {.panel-tabset}
+::: {.panel-tabset group="gut"}
 
-##### Community and composition
+##### Community and Composition
 
 ::: {.callout-note appearance="minimal"}
 #### *Bactrocera dorsalis* and its gut microbiota: an emerging insect model (2026)
@@ -91,12 +86,18 @@ hosts. Established in Africa after 2003.
 ##### Behaviour
 
 ::: {.callout-note appearance="minimal"}
-#### Bacterial-driven odorant receptor expression shifts alter olfactory behaviour (2026)
+#### Bacterial-driven odorant receptor expression shifts alter olfactory behaviour in the oriental fruit fly (2026)
 **Researchers:** Muyang He, Yonghao Lu  
 [Read paper →](https://resjournals.onlinelibrary.wiley.com/doi/full/10.1111/een.70045)
 :::
 
-##### Pest Control Applications
+:::
+
+#### Pest Control Applications
+
+::: {.panel-tabset group="pestcontrol"}
+
+##### Biological & Nucleic Acid
 
 ::: {.callout-note appearance="minimal"}
 #### RNAi-mediated immune suppression enhances *Serratia marcescens* pathogenicity (2026)
@@ -110,19 +111,49 @@ hosts. Established in Africa after 2003.
 [Read paper →](https://scijournals.onlinelibrary.wiley.com/doi/10.1002/ps.70805)
 :::
 
+::: {.callout-note appearance="minimal"}
+#### Construction of a chitosan nanoparticle-based nucleic acid pesticide system for the control of *Bactrocera dorsalis* (2026)
+**Researchers:** Guijian Zhang, Changying Niu  
+[Read paper →](https://doi.org/10.1007/s10340-025-01984-1)
 :::
 
-#### Gene Drive
+##### Field Management
+
+::: {.callout-note appearance="minimal"}
+#### Integration of insecticides with methyl eugenol-based male annihilation technique trap device enhances the management of *Bactrocera dorsalis* in sweet orange orchard (2026)
+**Researchers:** Gelana Keno Beyene, Gebissa Yigezu  
+**Affiliation:** (TBC — Ethiopia)  
+[Read paper →](https://doi.org/10.1155/aia/5346922)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Development and field evaluation of a lure-and-infect strategy integrating attractants with *Beauveria bassiana* for controlling *Bactrocera dorsalis* (2026)
+**Researchers:** Jingpeng Xie, Fengqin Cao  
+**Journal:** *Journal of Pest Science*  
+[Read paper →](https://doi.org/10.1007/s10340-026-02054-w)
+:::
 
 
-::: {.panel-tabset}
+##### Detection & Biosensors
+
+::: {.callout-note appearance="minimal"}
+#### MOF-enhanced colorimetric sensor array for early detection of citrus infestation by *Bactrocera dorsalis* (2026)
+**Researchers:** Xin Zhang, Tao Wen  
+**Journal:** (Postharvest Biology and Technology)  
+[Read paper →](10.1016/j.postharvbio.2026.114242)
+:::
+
+
+:::
+
+#### Gene Drives
+
+::: {.panel-tabset group="genedrives"}
 
 ##### White Pupae Lines
 
 ::: {.callout-note appearance="minimal"}
 #### CRISPR/Cas9-based white pupae mutant lines in *Bactrocera* spp. for sterile insect technique applications (2026)
-CRISPR/Cas9 knockout of the *white pupae* gene established *wp* lines in *B. dorsalis*,
-*B. correcta*, and *B. oleae*, supporting genetic sexing system development for SIT.  
 **Researchers:** Chrysanthi Ioannidou, Kostas Bourtzis  
 [Read paper →](https://doi.org/10.1111/1744-7917.70190)
 :::
@@ -131,22 +162,92 @@ CRISPR/Cas9 knockout of the *white pupae* gene established *wp* lines in *B. dor
 
 ::: {.callout-note appearance="minimal"}
 #### CRISPR/Cas9-mediated genome editing in the management of *Bactrocera dorsalis* (2026)
-Workflow for RNP-based genome editing as a foundation for precision-guided SIT and gene
-drive programmes in *B. dorsalis*.  
 **Researchers:** (first author TBC), (last author TBC)  
 [Read paper →](https://link.springer.com/protocol/10.1007/978-1-0716-4746-2_18)
 :::
 
 ::: {.callout-note appearance="minimal"}
 #### Next-generation genetic biocontrol technologies for tephritid pests (2026)
-CRISPR/Cas9 knockout of *Bdspr* (sex peptide receptor) substantially reduced female
-fertility, oviposition rate, and egg viability in *B. dorsalis*; targeted edits of
-spermatogenesis gene *Bdtektin1* impaired sperm development and ejaculate quality.  
 **Researchers:** (first author TBC), (last author TBC)  
 [Read paper →](https://doi.org/10.1080/19336934.2026.2682509)
 :::
 
 :::
+
+#### Ecology & Behaviour
+
+::: {.panel-tabset group="ecology"}
+
+##### Dispersal & Migration
+
+::: {.callout-note appearance="minimal"}
+#### Flight characteristics of *Bactrocera dorsalis* associated with long-distance migration (2026)
+**Researchers:** Naoya Hidaka, Akira Otuka  
+[Read paper →](https://doi.org/10.3390/insects17020203)
+:::
+
+##### Thermal Biology
+
+::: {.callout-note appearance="minimal"}
+#### Temperature experienced prior to adult emergence modulates adult cold tolerance of the invasive tephritid species *Bactrocera dorsalis* and *Bactrocera zonata* (2026)
+**Researchers:** Vasilis G. Rodovitis, Nikos T. Papadopoulos  
+[Read paper →]()
+:::
+
+##### Ecotoxicology
+
+::: {.callout-note appearance="minimal"}
+#### Cadmium exposure triggers adaptive physiological and molecular responses that undermine development in *Bactrocera dorsalis* (2026)
+**Researchers:** Wei Zhao, Dan-Dan Wei  
+**Journal:** *Ecotoxicology and Environmental Safety*  
+[Read paper →](https://doi.org/10.1016/j.ecoenv.2026.120524)
+:::
+
+##### Sensory Biology & Olfaction
+
+::: {.callout-note appearance="minimal"}
+#### Asymmetric evolution of antennal cell types underlies a derived ammonia-sensing logic for ecological adaptation in *Bactrocera dorsalis* (2026)
+**Researchers:** Wei Liu, Guirong Wang  
+**Journal:** *Advanced Science*  
+[Read paper →](https://doi.org/10.1002/advs.77168)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### N-(3-methylbutyl)acetamide mediates male–male courtship in *Bactrocera dorsalis* through behavioural threshold modulation (2026)
+**Researchers:** Yuhua Zhang, Xin Yi  
+**Journal:** *PNAS*  
+[Read paper →](https://doi.org/10.1073/pnas.2605503123)
+:::
+
+
+::: {.callout-note appearance="minimal"}
+#### Understanding the chemosensory and detoxification mechanisms in the oriental fruit fly, *Bactrocera dorsalis* (2026)
+**Researchers:** Saleem Jaffar, Yongyue Lu  
+**Affiliation:** South China Agricultural University, Guangzhou, China  
+**Journal:** * Insect Transcriptomics*  
+[Read paper →](https://doi.org/10.3390/insects17040416)
+:::
+
+
+
+##### Distribution & Surveillance
+
+::: {.callout-note appearance="minimal"}
+#### *Bactrocera dorsalis* dominance and first report of three *Dacus* species in Uganda (2026)
+**Researchers:** Denish Oyaro Onen, Jeninah Karungi  
+**Affiliation:** Makerere University, Uganda  
+[Read paper →](https://doi.org/10.1016/j.sciaf.2026.e03286)
+:::
+
+::: {.callout-note appearance="minimal"}
+#### Survey parameters to support detection survey design for *Bactrocera dorsalis* (2026)
+**Researchers:** Daria Rzepecka, Sybren Vos  
+**Affiliation:** European Food Safety Authority (EFSA)  
+[Read paper →](https://doi.org/10.2903/sp.efsa.2026.EN-10407)
+:::
+
+:::
+
 #### Transcriptomics
 
 *No papers added yet.*
@@ -161,7 +262,6 @@ spermatogenesis gene *Bdtektin1* impaired sperm development and ejaculate qualit
 **Affiliation:** Huazhong Agricultural University, China  
 **Themes:** Gut microbiota, immune defence, RNAi  
 [ResearchGate →](https://www.researchgate.net/profile/Hongyu-Zhang-61)
-
 :::
 :::
 
@@ -202,5 +302,28 @@ spermatogenesis gene *Bdtektin1* impaired sperm development and ejaculate qualit
 :::
 :::
 
+::: {.g-col-12 .g-col-md-4}
+::: {.callout-note appearance="minimal"}
+#### Guirong Wang
+**Affiliation:** Institute of Zoology, Chinese Academy of Sciences  
+**Themes:** Sensory biology, olfaction, chemosensory evolution  
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.callout-note appearance="minimal"}
+#### Nikos T. Papadopoulos
+**Affiliation:** University of Thessaly, Greece  
+**Themes:** Thermal biology, dispersal, life history  
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.callout-note appearance="minimal"}
+#### Dan-Dan Wei
+**Affiliation:** Southwest University, China  
+**Themes:** Ecotoxicology, nucleic acid pesticides, development  
+:::
+:::
 
 :::
