@@ -12,7 +12,10 @@ website:
         text: Home
       - href: research-map.qmd
         text: Research Map
-      - text: Genera
+      - href: research-themes.qmd
+        text: Research Themes
+
+
         menu:
           - href: bactrocera.qmd
             text: "*Bactrocera*"
@@ -30,6 +33,7 @@ website:
         contents:
           - index.qmd
           - research-map.qmd
+          - research-themes.qmd
       - section: "Genera"
         contents:
           - bactrocera.qmd

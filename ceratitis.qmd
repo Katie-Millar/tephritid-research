@@ -28,8 +28,7 @@ Described by Macleay in 1829.
 
 **Common name:** Mediterranean fruit fly (Medfly)  
 **Economic importance:** One of the world's most polyphagous pests, infesting over 300
-host species. Established on every inhabited continent except Asia. Managed primarily
-through the Sterile Insect Technique (SIT).
+host species; of plants, fruits, vegetables and nuts. As of 2026, this is currently established in,, Managed primarily through the Sterile Insect Technique (SIT).
 
 ![*Ceratitis capitata* adult](ccapitata.jpeg){width=60%}
 
@@ -77,7 +76,7 @@ through the Sterile Insect Technique (SIT).
 
 ::: {.callout-note appearance="minimal"}
 #### Antimicrobial feeding of parental adults reduces offspring tolerance to chemical stress in *Ceratitis capitata* (2026)
-**Researchers:** Alfonsina Palladini, Juan Rull  
+**Last Author:** Juan Rull  
 [Read paper →](https://doi.org/10.1111/aen.70117)
 :::
 
@@ -95,7 +94,7 @@ through the Sterile Insect Technique (SIT).
 
 ::: {.callout-note appearance="minimal"}
 #### A novel polymerase III promoter for gene editing in *Ceratitis capitata* (2026)
-**Researchers:** Amber S. K. Hall, Philip T. Leftwich  
+**Researchers:**  Philip T. Leftwich  
 [Read paper →](https://doi.org/10.64898/2026.04.21.719894)
 :::
 
@@ -103,7 +102,7 @@ through the Sterile Insect Technique (SIT).
 
 ::: {.callout-note appearance="minimal"}
 #### Generating cisgenic sexing strains in insect pests (2026)
-**Researchers:** Serafima Davydova, Angela Meccariello  
+**Researchers:** Angela Meccariello  
 [Read paper →](https://www.nature.com/articles/s42003-026-09624-9)
 :::
 
