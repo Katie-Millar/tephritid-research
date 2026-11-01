@@ -1,0 +1,141 @@
+---
+title: "Tephritidae Research Map — 2026"
+format:
+  html:
+    theme: sandstone
+    toc: false
+    smooth-scroll: true
+execute:
+  echo: false
+---
+
+```{ojs}
+//| echo: false
+
+L = require("leaflet@1.9.4")
+
+{
+  const link = document.createElement("link")
+  link.rel = "stylesheet"
+  link.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+  document.head.appendChild(link)
+}
+
+institutions = [
+  // B. dorsalis
+  { name: "Huazhong Agricultural University", city: "Wuhan, China", lat: 30.47, lon: 114.36, species: "Bactrocera dorsalis", themes: ["Gut Microbiota", "Immune Defence", "RNAi"], researchers: ["Hongyu Zhang", "Kamil Kabir"], papers: 5 },
+  { name: "China Agricultural University", city: "Beijing, China", lat: 40.00, lon: 116.28, species: "Bactrocera dorsalis", themes: ["Gut Microbiota", "Life-history", "Diet"], researchers: ["Zihua Zhao", "Yuxin Yang"], papers: 4 },
+  { name: "Institute of Zoology, CAS", city: "Beijing, China", lat: 39.95, lon: 116.46, species: "Bactrocera dorsalis", themes: ["Sensory Biology", "Olfaction"], researchers: ["Guirong Wang", "Wei Liu"], papers: 3 },
+  { name: "South China Agricultural University", city: "Guangzhou, China", lat: 23.16, lon: 113.34, species: "Bactrocera dorsalis", themes: ["Chemosensory", "Species Interactions", "Olfaction"], researchers: ["Yongyue Lu", "Saleem Jaffar", "Hongbo Jiang"], papers: 5 },
+  { name: "Southwest University", city: "Chongqing, China", lat: 29.82, lon: 106.40, species: "Bactrocera dorsalis", themes: ["Ecotoxicology", "Nucleic Acid Pesticides"], researchers: ["Dan-Dan Wei", "Changying Niu"], papers: 3 },
+  { name: "Postharvest Technology Research Group", city: "Sichuan, China", lat: 30.66, lon: 104.06, species: "Bactrocera dorsalis", themes: ["Detection & Biosensors"], researchers: ["Tao Wen", "Xin Zhang", "Xiancheng Ma"], papers: 2 },
+  { name: "Royal Museum for Central Africa", city: "Tervuren, Belgium", lat: 50.83, lon: 4.52, species: "Bactrocera dorsalis", themes: ["Gut Microbiota", "Phylogenetics", "Population Genetics"], researchers: ["Massimiliano Virgilio"], papers: 2 },
+  { name: "Makerere University", city: "Kampala, Uganda", lat: 0.33, lon: 32.57, species: "Bactrocera dorsalis", themes: ["Distribution & Surveillance"], researchers: ["Denish Oyaro Onen", "Jeninah Karungi"], papers: 1 },
+  { name: "European Food Safety Authority", city: "Parma, Italy", lat: 44.80, lon: 10.33, species: "Bactrocera dorsalis", themes: ["Distribution & Surveillance"], researchers: ["Daria Rzepecka", "Sybren Vos"], papers: 1 },
+  { name: "National Institute for Agro-Environmental Sciences", city: "Tsukuba, Japan", lat: 36.02, lon: 140.12, species: "Bactrocera dorsalis", themes: ["Dispersal & Migration"], researchers: ["Naoya Hidaka", "Akira Otuka"], papers: 1 },
+  { name: "Gondar / Ethiopian Research", city: "Ethiopia", lat: 9.14, lon: 40.49, species: "Bactrocera dorsalis", themes: ["Pest Management", "Field Control"], researchers: ["Gelana Keno Beyene", "Gebissa Yigezu"], papers: 1 },
+
+  // C. capitata
+  { name: "University of East Anglia", city: "Norwich, UK", lat: 52.62, lon: 1.24, species: "Ceratitis capitata", themes: ["Gene Drives", "CRISPR Tooling"], researchers: ["Philip Leftwich", "Tracey Chapman", "Amber S.K. Hall"], papers: 3 },
+  { name: "Imperial College London", city: "London, UK", lat: 51.50, lon: -0.18, species: "Ceratitis capitata", themes: ["Gene Drives", "Cisgenic Sexing Strains"], researchers: ["Angela Meccariello", "Serafima Davydova"], papers: 2 },
+  { name: "University of Thessaly", city: "Larissa, Greece", lat: 39.64, lon: 22.42, species: "Ceratitis capitata", themes: ["Dispersal", "Thermal Biology", "Gut Microbiota", "Development"], researchers: ["Nikos T. Papadopoulos", "Georgia Papadogiorgou", "Paraschos N. Prekas"], papers: 7 },
+  { name: "University of Patras", city: "Patras, Greece", lat: 38.29, lon: 21.79, species: "Ceratitis capitata", themes: ["Wolbachia", "Stress Physiology", "Development"], researchers: ["A.A. Augustinos", "M. Kamilari"], papers: 2 },
+  { name: "USDA-ARS", city: "USA", lat: 38.89, lon: -77.03, species: "Ceratitis capitata", themes: ["Gut Microbiome", "SIT Quality Control", "Methods"], researchers: ["Charles J. Mason", "Scott M. Geib", "Peishih Liang"], papers: 3 },
+  { name: "Çanakkale Onsekiz Mart University", city: "Çanakkale, Türkiye", lat: 40.13, lon: 26.40, species: "Ceratitis capitata", themes: ["Methods", "Developmental Biology", "Biopesticides"], researchers: ["Tugberk Tuncyurek", "Hanife Yandayan Genc"], papers: 3 },
+  { name: "CONICET / National University", city: "Córdoba, Argentina", lat: -31.42, lon: -64.19, species: "Ceratitis capitata", themes: ["Gut Microbiota", "Stress Tolerance", "SIT", "Holobiont"], researchers: ["Alfonsina Palladini", "Juan Rull"], papers: 5 },
+  { name: "Institution of Biotechnology", city: "Tunis, Tunisia", lat: 36.82, lon: 10.17, species: "Ceratitis capitata", themes: ["SIT", "Probiotics", "Sterile Male Quality"], researchers: ["Kamel Charaabi", "Meriem Msaad Guerfali"], papers: 1 },
+  { name: "Plant Protection Research Institute", city: "Giza, Egypt", lat: 30.01, lon: 31.21, species: "Ceratitis capitata", themes: ["Chemical Ecology"], researchers: ["Ismail R. El-Gendy", "Abdelbaky A. Khodair"], papers: 1 },
+  { name: "UC Davis / University of Thessaly", city: "California, USA", lat: 38.54, lon: -121.74, species: "Ceratitis capitata", themes: ["Sleep & Ageing", "Life History"], researchers: ["Poorbita Kundu", "Hans-Georg Müller"], papers: 1 },
+  { name: "Hebrew University of Jerusalem", city: "Jerusalem, Israel", lat: 31.77, lon: 35.20, species: "Ceratitis capitata", themes: ["Dispersal", "Urban Agriculture", "Ecology"], researchers: ["Carmel Katz", "Yafit Cohen", "David Nestel"], papers: 2 },
+  { name: "Universidade Federal do Rio Grande", city: "Rio Grande, Brazil", lat: -32.03, lon: -52.10, species: "Ceratitis capitata", themes: ["Entomophagy & Novel Uses"], researchers: ["Natasha Spindola Marasca", "Vilásia Guimarães Martins"], papers: 1 },
+  { name: "ECOSUR Mexico", city: "Chiapas, Mexico", lat: 16.75, lon: -92.64, species: "Ceratitis capitata", themes: ["Biological Control", "Beauveria bassiana"], researchers: ["Salvador Flores", "Pablo Liedo", "Jorge Toledo"], papers: 1 },
+  { name: "University of Naples / CNR", city: "Naples, Italy", lat: 40.85, lon: 14.27, species: "Ceratitis capitata", themes: ["Gene Drives", "Sex Determination"], researchers: ["Gennaro Volpe", "Giuseppe Saccone"], papers: 1 },
+  { name: "Justus Liebig University Giessen", city: "Giessen, Germany", lat: 50.58, lon: 8.68, species: "Ceratitis capitata", themes: ["Gene Drives", "White Pupae Construct", "SIT"], researchers: ["Lucas H.F. Prates", "Marc F. Schetelig"], papers: 1 },
+  { name: "CSIC", city: "Madrid, Spain", lat: 40.45, lon: -3.69, species: "Ceratitis capitata", themes: ["Insecticide Resistance"], researchers: ["Rabeh Arouri", "Félix Ortego"], papers: 1 }
+]
+
+colourFor = (species) => species === "Bactrocera dorsalis" ? "#2E7D9E" : "#C05C28"
+
+popupFor = (d) => `
+  <div style="font-family:sans-serif;min-width:220px;max-width:280px;font-size:13px">
+    <div style="font-weight:700;font-size:15px;margin-bottom:3px">${d.name}</div>
+    <div style="color:#666;margin-bottom:6px">${d.city}</div>
+    <hr style="margin:6px 0;border-color:#ddd">
+    <span style="background:${colourFor(d.species)};color:#fff;border-radius:4px;
+      padding:2px 8px;font-size:12px;font-style:italic">${d.species}</span>
+    <div style="margin-top:8px"><b>Research themes</b><br>
+      ${d.themes.map(t => `· ${t}`).join("<br>")}
+    </div>
+    <div style="margin-top:6px"><b>Key researchers</b><br>
+      ${d.researchers.map(r => `· ${r}`).join("<br>")}
+    </div>
+    <div style="margin-top:6px;color:#888">${d.papers} paper${d.papers !== 1 ? "s" : ""} in database (2026)</div>
+  </div>`
+
+{
+  const container = DOM.element("div", {
+    style: "height:580px;width:100%;border-radius:8px;overflow:hidden;border:1px solid #ddd"
+  })
+  yield container
+
+  const map = L.map(container, { center: [25, 20], zoom: 2, minZoom: 1 })
+
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap contributors",
+    maxZoom: 19
+  }).addTo(map)
+
+  institutions.forEach(d => {
+    const size = 28 + d.papers * 4
+    const icon = L.divIcon({
+      html: `<div style="
+        width:${size}px;
+        height:${size}px;
+        background:${colourFor(d.species)};
+        border-radius:50%;
+        border:2.5px solid #fff;
+        box-shadow:0 2px 6px rgba(0,0,0,0.25);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:${size * 0.55}px;
+        line-height:1;
+      ">🪰</div>`,
+      className: "",
+      iconSize: [size, size],
+      iconAnchor: [size / 2, size / 2],
+      popupAnchor: [0, -(size / 2)]
+    })
+
+    L.marker([d.lat, d.lon], { icon })
+      .bindPopup(popupFor(d), { maxWidth: 300 })
+      .bindTooltip(d.name, { direction: "top", offset: [0, -(size / 2)] })
+      .addTo(map)
+  })
+
+  const legend = L.control({ position: "bottomleft" })
+  legend.onAdd = () => {
+    const div = L.DomUtil.create("div")
+    div.innerHTML = `
+      <div style="background:#fff;padding:10px 14px;border-radius:6px;
+        border:1px solid #ccc;font-family:sans-serif;font-size:12px;line-height:1.8">
+        <div style="font-weight:700;margin-bottom:4px">Species</div>
+        <div>
+          <span style="display:inline-flex;align-items:center;justify-content:center;
+            width:20px;height:20px;border-radius:50%;background:#2E7D9E;
+            margin-right:6px;font-size:12px;vertical-align:middle">🪰</span>
+          <em>B. dorsalis</em>
+        </div>
+        <div>
+          <span style="display:inline-flex;align-items:center;justify-content:center;
+            width:20px;height:20px;border-radius:50%;background:#C05C28;
+            margin-right:6px;font-size:12px;vertical-align:middle">🪰</span>
+          <em>C. capitata</em>
+        </div>
+        <div style="margin-top:6px;color:#888">Bubble size = paper count<br>Click for details</div>
+      </div>`
+    return div
+  }
+  legend.addTo(map)
+}
+```

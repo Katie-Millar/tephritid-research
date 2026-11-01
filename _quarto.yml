@@ -5,16 +5,18 @@ project:
 website:
   title: "Tephritidae Research"
   description: "A structured review of tephritid fruit fly research by genus and species"
-  
+
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - href: research-map.qmd
+        text: Research Map
       - text: Genera
         menu:
           - href: bactrocera.qmd
             text: "*Bactrocera*"
-          - href: ceratitis.qmd.qmd
+          - href: ceratitis.qmd
             text: "*Ceratitis*"
     right:
       - icon: github
@@ -27,20 +29,21 @@ website:
       - section: "Overview"
         contents:
           - index.qmd
+          - research-map.qmd
       - section: "Genera"
         contents:
           - bactrocera.qmd
           - ceratitis.qmd
 
   search: true
-  
+
   page-footer:
     left: "Tephritidae Research Group"
     right: "Built with [Quarto](https://quarto.org)"
 
 format:
   html:
-    theme: cosmo
+    theme: sandstone
     toc: true
     toc-depth: 3
     toc-title: "On this page"
