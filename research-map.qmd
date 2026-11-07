@@ -1,0 +1,312 @@
+---
+title: "Tephritidae Research Map — 2026"
+format:
+  html:
+    theme: sandstone
+    toc: false
+    smooth-scroll: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+library(leaflet)
+library(dplyr)
+
+institutions <- tibble::tribble(
+  ~name, ~institution, ~lat, ~lon, ~species, ~themes, ~researchers, ~papers,
+
+  # B. dorsalis
+  "Huazhong Agricultural University",
+  "Wuhan, China",
+  30.47, 114.36,
+  "Bactrocera dorsalis",
+  "Gut Microbiota · Immune Defence · RNAi",
+  "Hongyu Zhang · Kamil Kabir",
+  5,
+
+  "China Agricultural University",
+  "Beijing, China",
+  40.00, 116.28,
+  "Bactrocera dorsalis",
+  "Gut Microbiota · Life-history · Diet",
+  "Zihua Zhao · Yuxin Yang",
+  4,
+
+  "Institute of Zoology, CAS",
+  "Beijing, China",
+  39.98, 116.42,
+  "Bactrocera dorsalis",
+  "Sensory Biology · Olfaction",
+  "Guirong Wang · Wei Liu",
+  3,
+
+  "South China Agricultural University",
+  "Guangzhou, China",
+  23.16, 113.34,
+  "Bactrocera dorsalis",
+  "Sensory Biology · Species Interactions · Chemosensory",
+  "Yongyue Lu · Saleem Jaffar · Hongbo Jiang",
+  5,
+
+  "Southwest University",
+  "Chongqing, China",
+  29.82, 106.40,
+  "Bactrocera dorsalis",
+  "Ecotoxicology · Nucleic Acid Pesticides",
+  "Dan-Dan Wei · Changying Niu",
+  3,
+
+  "Postharvest Technology Research Group",
+  "Sichuan, China",
+  30.66, 104.06,
+  "Bactrocera dorsalis",
+  "Detection & Biosensors",
+  "Tao Wen · Xin Zhang · Xiancheng Ma",
+  2,
+
+  "Royal Museum for Central Africa",
+  "Tervuren, Belgium",
+  50.83, 4.52,
+  "Bactrocera dorsalis",
+  "Gut Microbiota · Phylogenetics · Population Genetics",
+  "Massimiliano Virgilio · Abir Hafsi",
+  2,
+
+  "Makerere University",
+  "Kampala, Uganda",
+  0.33, 32.57,
+  "Bactrocera dorsalis",
+  "Distribution & Surveillance",
+  "Denish Oyaro Onen · Jeninah Karungi",
+  1,
+
+  "European Food Safety Authority",
+  "Parma, Italy",
+  44.80, 10.33,
+  "Bactrocera dorsalis",
+  "Distribution & Surveillance",
+  "Daria Rzepecka · Sybren Vos",
+  1,
+
+  "ECOSUR / National Programme for Fruit Flies",
+  "Chiapas, Mexico",
+  16.75, -93.12,
+  "Bactrocera dorsalis",
+  "Pest Management · Field Control",
+  "Gelana Keno Beyene",
+  1,
+
+  "National Institute for Agro-Environmental Sciences",
+  "Tsukuba, Japan",
+  36.02, 140.12,
+  "Bactrocera dorsalis",
+  "Dispersal & Migration",
+  "Naoya Hidaka · Akira Otuka",
+  1,
+
+  # C. capitata
+  "University of East Anglia",
+  "Norwich, UK",
+  52.62, 1.24,
+  "Ceratitis capitata",
+  "Gene Drives · CRISPR Tooling",
+  "Philip Leftwich · Tracey Chapman · Amber S.K. Hall",
+  3,
+
+  "Imperial College London",
+  "London, UK",
+  51.50, -0.18,
+  "Ceratitis capitata",
+  "Gene Drives · Cisgenic Sexing Strains",
+  "Angela Meccariello · Serafima Davydova",
+  2,
+
+  "University of Thessaly",
+  "Larissa, Greece",
+  39.64, 22.42,
+  "Ceratitis capitata",
+  "Dispersal · Thermal Biology · Gut Microbiota · Development",
+  "Nikos T. Papadopoulos · Georgia Papadogiorgou · Paraschos N. Prekas",
+  7,
+
+  "University of Patras",
+  "Patras, Greece",
+  38.29, 21.79,
+  "Ceratitis capitata",
+  "Wolbachia · Stress Physiology · Development",
+  "A.A. Augustinos · M. Kamilari · G. Tsiamis",
+  2,
+
+  "USDA-ARS",
+  "Washington DC area, USA",
+  38.89, -77.03,
+  "Ceratitis capitata",
+  "Gut Microbiome Composition · SIT Quality Control · Methods",
+  "Charles J. Mason · Scott M. Geib · Peishih Liang",
+  3,
+
+  "Çanakkale Onsekiz Mart University",
+  "Çanakkale, Türkiye",
+  40.13, 26.40,
+  "Ceratitis capitata",
+  "Methods · Developmental Biology · Biopesticides",
+  "Tugberk Tuncyurek · Hanife Yandayan Genc · Mevlut Akcura",
+  3,
+
+  "National University of Córdoba / CONICET",
+  "Córdoba, Argentina",
+  -31.42, -64.19,
+  "Ceratitis capitata",
+  "Gut Microbiota · Stress Tolerance · SIT · Holobiont",
+  "Alfonsina Palladini · Juan Rull",
+  5,
+
+  "Institution of Biotechnology, Tunisia",
+  "Tunis, Tunisia",
+  36.82, 10.17,
+  "Ceratitis capitata",
+  "SIT · Probiotics · Sterile Male Quality",
+  "Kamel Charaabi · Meriem Msaad Guerfali",
+  1,
+
+  "Plant Protection Research Institute",
+  "Giza, Egypt",
+  30.01, 31.21,
+  "Ceratitis capitata",
+  "Chemical Ecology",
+  "Ismail R. El-Gendy · Abdelbaky A. Khodair",
+  1,
+
+  "UC Davis / University of Thessaly",
+  "California, USA",
+  38.54, -121.74,
+  "Ceratitis capitata",
+  "Sleep & Ageing · Life History",
+  "Poorbita Kundu · Hans-Georg Müller",
+  1,
+
+  "Hebrew University of Jerusalem",
+  "Jerusalem, Israel",
+  31.77, 35.20,
+  "Ceratitis capitata",
+  "Dispersal · Ecology · Urban Agriculture",
+  "Carmel Katz · Yafit Cohen · David Nestel",
+  2,
+
+  "Universidade Federal do Rio Grande",
+  "Rio Grande, Brazil",
+  -32.03, -52.10,
+  "Ceratitis capitata",
+  "Entomophagy & Novel Uses",
+  "Natasha Spindola Marasca · Vilásia Guimarães Martins",
+  1,
+
+  "ECOSUR Mexico",
+  "Chiapas, Mexico",
+  16.75, -92.64,
+  "Ceratitis capitata",
+  "Biological Control · Beauveria bassiana",
+  "Salvador Flores · Pablo Liedo · Jorge Toledo",
+  1,
+
+  "Instituto de Investigación en Biodiversidad y Medioambiente",
+  "Tenerife, Spain",
+  28.46, -16.25,
+  "Ceratitis capitata",
+  "Gene Drives · Sex Determination",
+  "Gennaro Volpe · Giuseppe Saccone",
+  1,
+
+  "Justus Liebig University Giessen",
+  "Giessen, Germany",
+  50.58, 8.68,
+  "Ceratitis capitata",
+  "Gene Drives · White Pupae Construct · SIT",
+  "Lucas Henrique Figueiredo Prates · Marc F. Schetelig",
+  1,
+
+  "Consejo Superior de Investigaciones Científicas",
+  "Madrid, Spain",
+  40.45, -3.69,
+  "Ceratitis capitata",
+  "Insecticide Resistance",
+  "Rabeh Arouri · Félix Ortego",
+  1
+)
+
+# Colour palette
+pal <- colorFactor(
+  palette = c("#2E7D9E", "#C05C28"),
+  domain  = c("Bactrocera dorsalis", "Ceratitis capitata")
+)
+
+# Popup HTML
+institutions <- institutions |>
+  mutate(popup = paste0(
+    "<div style='font-family:sans-serif;min-width:220px;max-width:280px'>",
+    "<div style='font-weight:700;font-size:0.95rem;margin-bottom:4px'>",
+    name, "</div>",
+    "<div style='color:#555;font-size:0.82rem;margin-bottom:6px'>", institution, "</div>",
+    "<hr style='margin:6px 0;border-color:#ddd'>",
+    "<div style='margin-bottom:4px'>",
+    "<span style='background:", pal(species), ";color:#fff;",
+    "border-radius:4px;padding:2px 7px;font-size:0.75rem;font-style:italic'>",
+    species, "</span></div>",
+    "<div style='font-size:0.8rem;margin-top:6px'>",
+    "<b>Research themes</b><br>",
+    gsub(" · ", "<br>· ", themes),
+    "</div>",
+    "<div style='font-size:0.8rem;margin-top:6px'>",
+    "<b>Key researchers</b><br>",
+    gsub(" · ", "<br>· ", researchers),
+    "</div>",
+    "<div style='font-size:0.78rem;color:#777;margin-top:6px'>",
+    papers, " paper", ifelse(papers == 1, "", "s"), " in database (2026)",
+    "</div>",
+    "</div>"
+  ))
+
+leaflet(institutions,
+        options = leafletOptions(minZoom = 2, maxZoom = 10)) |>
+  addProviderTiles(providers$CartoDB.Positron) |>
+  addCircleMarkers(
+    lng        = ~lon,
+    lat        = ~lat,
+    radius     = ~scales::rescale(papers, to = c(7, 20)),
+    color      = ~pal(species),
+    fillColor  = ~pal(species),
+    fillOpacity = 0.75,
+    weight     = 2,
+    opacity    = 1,
+    popup      = ~popup,
+    label      = ~name,
+    labelOptions = labelOptions(
+      style     = list("font-weight" = "bold", padding = "4px 8px"),
+      textsize  = "13px",
+      direction = "auto"
+    )
+  ) |>
+  addLegend(
+    position = "bottomleft",
+    pal      = pal,
+    values   = ~species,
+    title    = "Species",
+    opacity  = 0.85,
+    labFormat = labelFormat(transform = function(x) paste0("<em>", x, "</em>"))
+  ) |>
+  addControl(
+    html = paste0(
+      "<div style='background:#fff;padding:8px 12px;border-radius:6px;",
+      "border:1px solid #ccc;font-family:sans-serif;font-size:0.78rem;color:#555'>",
+      "<b>Bubble size</b> = number of 2026 papers<br>",
+      "<b>Click</b> a bubble to see researchers and themes",
+      "</div>"
+    ),
+    position = "topright"
+  ) |>
+  setView(lng = 30, lat = 30, zoom = 2)
+```

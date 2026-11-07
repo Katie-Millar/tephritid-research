@@ -14,7 +14,7 @@ website:
         menu:
           - href: bactrocera.qmd
             text: "*Bactrocera*"
-          - href: ceratitis.qmd.qmd
+          - href: ceratitis.qmd
             text: "*Ceratitis*"
     right:
       - icon: github
