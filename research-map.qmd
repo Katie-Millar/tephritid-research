@@ -150,7 +150,7 @@ institutions = [
     themes: ["Pest Management", "Field Control"],
     researchers: ["Gelana Keno Beyene", "Gebissa Yigezu"],
     paperList: [
-      { title: "Integration of insecticides with methyl eugenol-based male annihilation technique trap device enhances the management of B. dorsalis in sweet orange orchard (2026)", url: "https://doi.org/10.1155/aia/5346922" }
+      { title: "Integration of insecticides with methyl eugenol-based male annihilation technique trap device (2026)", url: "https://doi.org/10.1155/aia/5346922" }
     ]
   },
 
@@ -167,7 +167,7 @@ institutions = [
   },
 
   { name: "BdNOX5 Research Group",
-    city: "China (TBC)",
+    city: "Nanjing, China",
     lat: 32.06, lon: 118.79,
     species: "Bactrocera dorsalis",
     themes: ["Gut Microbiota", "Gut Homeostasis", "ROS Regulation"],
@@ -178,7 +178,7 @@ institutions = [
   },
 
   { name: "Olfaction & Behaviour Lab",
-    city: "China (TBC)",
+    city: "Shanghai, China",
     lat: 31.23, lon: 121.47,
     species: "Bactrocera dorsalis",
     themes: ["Olfactory Behaviour", "Gut Microbiota"],
@@ -189,7 +189,7 @@ institutions = [
   },
 
   { name: "Lure & Biocontrol Research Group",
-    city: "China (TBC)",
+    city: "Changsha, China",
     lat: 28.23, lon: 112.94,
     species: "Bactrocera dorsalis",
     themes: ["Field Management", "Lure & Infect", "Biocontrol"],
@@ -201,7 +201,7 @@ institutions = [
   },
 
   { name: "Fusarium Biocontrol Lab",
-    city: "China (TBC)",
+    city: "Fuzhou, China",
     lat: 26.07, lon: 119.30,
     species: "Bactrocera dorsalis",
     themes: ["Biological Control", "Fungal Pathogens"],
@@ -212,7 +212,7 @@ institutions = [
   },
 
   { name: "Courtship Pheromone Lab",
-    city: "China (TBC)",
+    city: "Hangzhou, China",
     lat: 30.27, lon: 120.15,
     species: "Bactrocera dorsalis",
     themes: ["Sensory Biology", "Mating Behaviour", "Chemical Ecology"],
@@ -228,7 +228,7 @@ institutions = [
     city: "Norwich, UK",
     lat: 52.62, lon: 1.24,
     species: "Ceratitis capitata",
-    themes: ["Gut Microbitoa", "Gene Drives", "CRISPR Tooling"],
+    themes: ["Gut Microbiota", "Gene Drives", "CRISPR Tooling"],
     researchers: ["Philip Leftwich", "Tracey Chapman"],
     paperList: [
       { title: "A novel polymerase III promoter for gene editing in Ceratitis capitata (2026)", url: "https://doi.org/10.64898/2026.04.21.719894" }
@@ -421,93 +421,129 @@ institutions = [
       { title: "Promising nutritional values of Anethum graveolens as a bioinsecticidal agent against C. capitata: attractancy and lethality (2026)", url: "https://doi.org/10.1002/ffj.70062" }
     ]
   }
-
 ]
 
 colourFor = (species) => species === "Bactrocera dorsalis" ? "#2E7D9E" : "#C05C28"
 
 popupFor = (d) => `
-  <div style="font-family:sans-serif;min-width:230px;max-width:300px;font-size:13px">
-    <div style="font-weight:700;font-size:15px;margin-bottom:3px">${d.name}</div>
-    <div style="color:#666;margin-bottom:6px">${d.city}</div>
-    <hr style="margin:6px 0;border-color:#ddd">
-    <span style="background:${colourFor(d.species)};color:#fff;border-radius:4px;
-      padding:2px 8px;font-size:12px;font-style:italic">${d.species}</span>
-    <div style="margin-top:8px"><b>Research themes</b><br>
-      ${d.themes.map(t => `· ${t}`).join("<br>")}
+  <div style="font-family:sans-serif;min-width:240px;max-width:310px;font-size:13px">
+    <div style="background:${colourFor(d.species)};margin:-1px -1px 0;padding:10px 12px;border-radius:4px 4px 0 0">
+      <div style="font-weight:700;font-size:14px;color:#fff">${d.name}</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.8);margin-top:2px">${d.city}</div>
     </div>
-    <div style="margin-top:6px"><b>Principal Investigators</b><br>
-      ${d.researchers.map(r => `· ${r}`).join("<br>")}
-    </div>
-    <div style="margin-top:6px"><b>Papers (${d.paperList.length})</b><br>
-      ${d.paperList.map(p =>
-        `· <a href="${p.url}" target="_blank"
-           style="color:#2E7D9E;text-decoration:none;font-size:11px;line-height:1.6">${p.title}</a>`
-      ).join("<br>")}
+    <div style="padding:10px 12px">
+      <div style="font-style:italic;font-size:12px;color:${colourFor(d.species)};margin-bottom:8px">${d.species}</div>
+      <div style="margin-bottom:8px">
+        <div style="font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:#888;margin-bottom:3px">Research themes</div>
+        ${d.themes.map(t => `<span style="display:inline-block;background:#f0f0f0;border-radius:3px;padding:1px 6px;font-size:11px;margin:1px 2px 1px 0">${t}</span>`).join("")}
+      </div>
+      <div style="margin-bottom:8px">
+        <div style="font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:#888;margin-bottom:3px">Principal Investigators</div>
+        ${d.researchers.map(r => `<div style="font-size:12px">· ${r}</div>`).join("")}
+      </div>
+      <div>
+        <div style="font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:#888;margin-bottom:3px">Papers (${d.paperList.length})</div>
+        ${d.paperList.map(p =>
+          `<div style="margin-bottom:3px">· <a href="${p.url}" target="_blank"
+             style="color:#2E7D9E;text-decoration:none;font-size:11px;line-height:1.5">${p.title}</a></div>`
+        ).join("")}
+      </div>
     </div>
   </div>`
 
 {
+  // ── filter bar ──
+  const bar = html`<div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+    <button id="btn-all"  style="padding:5px 14px;border-radius:4px;border:1px solid #2E7D9E;background:#2E7D9E;color:#fff;cursor:pointer;font-size:13px">All</button>
+    <button id="btn-bd"   style="padding:5px 14px;border-radius:4px;border:1px solid #2E7D9E;background:#fff;color:#2E7D9E;cursor:pointer;font-size:13px">🪰 <em>B. dorsalis</em></button>
+    <button id="btn-cc"   style="padding:5px 14px;border-radius:4px;border:1px solid #C05C28;background:#fff;color:#C05C28;cursor:pointer;font-size:13px">🪰 <em>C. capitata</em></button>
+    <span style="margin-left:auto;font-size:12px;color:#888;align-self:center">${institutions.length} institutions · click a marker for papers</span>
+  </div>`
+  yield bar
+
+  // ── map ──
   const container = DOM.element("div", {
     style: "height:580px;width:100%;border-radius:8px;overflow:hidden;border:1px solid #ddd"
   })
   yield container
 
   const map = L.map(container, { center: [25, 20], zoom: 2, minZoom: 1 })
-
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "© OpenStreetMap contributors",
-    maxZoom: 19
+    attribution: "© OpenStreetMap contributors", maxZoom: 19
   }).addTo(map)
+
+  const markers = []
 
   institutions.forEach(d => {
     const size = 28 + d.paperList.length * 4
     const icon = L.divIcon({
       html: `<div style="
-        width:${size}px;
-        height:${size}px;
+        width:${size}px;height:${size}px;
         background:${colourFor(d.species)};
-        border-radius:50%;
-        border:2.5px solid #fff;
-        box-shadow:0 2px 6px rgba(0,0,0,0.25);
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        font-size:${size * 0.55}px;
-        line-height:1;
-      ">🪰</div>`,
-      className: "",
-      iconSize: [size, size],
-      iconAnchor: [size / 2, size / 2],
-      popupAnchor: [0, -(size / 2)]
+        border-radius:50%;border:2.5px solid #fff;
+        box-shadow:0 2px 8px rgba(0,0,0,0.25);
+        display:flex;align-items:center;justify-content:center;
+        font-size:${size * 0.52}px;line-height:1">🪰</div>`,
+      className: "", iconSize: [size, size],
+      iconAnchor: [size/2, size/2], popupAnchor: [0, -(size/2)]
     })
-
-    L.marker([d.lat, d.lon], { icon })
-      .bindPopup(popupFor(d), { maxWidth: 320 })
-      .bindTooltip(d.name, { direction: "top", offset: [0, -(size / 2)] })
-      .addTo(map)
+    const m = L.marker([d.lat, d.lon], { icon })
+      .bindPopup(popupFor(d), { maxWidth: 330 })
+      .bindTooltip(`<strong>${d.name}</strong><br><em style="font-size:11px">${d.city}</em>`,
+        { direction: "top", offset: [0, -(size/2)] })
+    m._species = d.species
+    m.addTo(map)
+    markers.push(m)
   })
 
+  // filter logic
+  function setFilter(sp) {
+    markers.forEach(m => {
+      if (!sp || m._species === sp) m.addTo(map)
+      else map.removeLayer(m)
+    })
+  }
+
+  bar.querySelector("#btn-all").onclick = () => {
+    setFilter(null)
+    bar.querySelectorAll("button").forEach(b => {
+      b.style.background = "#fff"; b.style.color = "#555"; b.style.borderColor = "#ccc"
+    })
+    const b = bar.querySelector("#btn-all")
+    b.style.background = "#2E7D9E"; b.style.color = "#fff"; b.style.borderColor = "#2E7D9E"
+  }
+  bar.querySelector("#btn-bd").onclick = () => {
+    setFilter("Bactrocera dorsalis")
+    bar.querySelectorAll("button").forEach(b => {
+      b.style.background = "#fff"; b.style.color = "#555"; b.style.borderColor = "#ccc"
+    })
+    const b = bar.querySelector("#btn-bd")
+    b.style.background = "#2E7D9E"; b.style.color = "#fff"; b.style.borderColor = "#2E7D9E"
+  }
+  bar.querySelector("#btn-cc").onclick = () => {
+    setFilter("Ceratitis capitata")
+    bar.querySelectorAll("button").forEach(b => {
+      b.style.background = "#fff"; b.style.color = "#555"; b.style.borderColor = "#ccc"
+    })
+    const b = bar.querySelector("#btn-cc")
+    b.style.background = "#C05C28"; b.style.color = "#fff"; b.style.borderColor = "#C05C28"
+  }
+
+  // legend
   const legend = L.control({ position: "bottomleft" })
   legend.onAdd = () => {
     const div = L.DomUtil.create("div")
     div.innerHTML = `
       <div style="background:#fff;padding:10px 14px;border-radius:6px;
-        border:1px solid #ccc;font-family:sans-serif;font-size:12px;line-height:1.8">
+        border:1px solid #ccc;font-family:sans-serif;font-size:12px;line-height:1.9">
         <div style="font-weight:700;margin-bottom:4px">Species</div>
-        <div>
-          <span style="display:inline-flex;align-items:center;justify-content:center;
-            width:20px;height:20px;border-radius:50%;background:#2E7D9E;
-            margin-right:6px;font-size:12px;vertical-align:middle">🪰</span>
-          <em>B. dorsalis</em>
-        </div>
-        <div>
-          <span style="display:inline-flex;align-items:center;justify-content:center;
-            width:20px;height:20px;border-radius:50%;background:#C05C28;
-            margin-right:6px;font-size:12px;vertical-align:middle">🪰</span>
-          <em>C. capitata</em>
-        </div>
-        <div style="margin-top:6px;color:#888">Bubble size = paper count<br>Click for papers & details</div>
+        <div><span style="display:inline-flex;align-items:center;justify-content:center;
+          width:20px;height:20px;border-radius:50%;background:#2E7D9E;
+          margin-right:6px;font-size:12px">🪰</span><em>B. dorsalis</em></div>
+        <div><span style="display:inline-flex;align-items:center;justify-content:center;
+          width:20px;height:20px;border-radius:50%;background:#C05C28;
+          margin-right:6px;font-size:12px">🪰</span><em>C. capitata</em></div>
+        <div style="margin-top:6px;color:#888;font-size:11px">Bubble size = paper count</div>
       </div>`
     return div
   }

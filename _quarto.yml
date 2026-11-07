@@ -5,6 +5,13 @@ project:
 website:
   title: "Tephritidae Research"
   description: "A structured review of tephritid fruit fly research by genus and species"
+  image: "tephritids.jpeg"
+  open-graph: true
+  twitter-card:
+    card-style: summary_large_image
+    image: "tephritids.jpeg"
+    title: "Tephritidae Research Database"
+    description: "Interactive maps, research themes and papers on tephritid fruit fly research — 2026"
 
   navbar:
     left:
@@ -12,10 +19,9 @@ website:
         text: Home
       - href: research-map.qmd
         text: Research Map
-      - href: research-themes.qmd
+      - href: themes-network.qmd
         text: Research Themes
-
-
+      - text: Genera
         menu:
           - href: bactrocera.qmd
             text: "*Bactrocera*"
@@ -33,7 +39,7 @@ website:
         contents:
           - index.qmd
           - research-map.qmd
-          - research-themes.qmd
+          - themes-network.qmd
       - section: "Genera"
         contents:
           - bactrocera.qmd
