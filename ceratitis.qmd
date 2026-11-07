@@ -18,27 +18,25 @@ execute:
   echo: false
 ---
 
-
 Described by Macleay in 1829.
 
 **Tribe:** Ceratitidini | **Species:** ~80–100
 
 ---
 
-# *Ceratitis capitata* (Wiedemann, 1824) {#sec-c-capitata}
+## *Ceratitis capitata* (Wiedemann, 1824) {#sec-c-capitata}
 
 **Common name:** Mediterranean fruit fly (Medfly)  
 **Economic importance:** One of the world's most polyphagous pests, infesting over 300
-host species. Established on every inhabited continent except Asia. Managed primarily
-through the Sterile Insect Technique (SIT).
+host species; of plants, fruits, vegetables and nuts. As of 2026, this is currently established in,, Managed primarily through the Sterile Insect Technique (SIT).
 
 ![*Ceratitis capitata* adult](ccapitata.jpeg){width=60%}
 
 ---
 
-## Research {.panel-tabset}
+### Research {.panel-tabset}
 
-### Gut Microbiota
+#### Gut Microbiota
 
 ::: {.panel-tabset group="gut"}
 
@@ -78,7 +76,7 @@ through the Sterile Insect Technique (SIT).
 
 ::: {.callout-note appearance="minimal"}
 #### Antimicrobial feeding of parental adults reduces offspring tolerance to chemical stress in *Ceratitis capitata* (2026)
-**Researchers:** Alfonsina Palladini, Juan Rull  
+**Last Author:** Juan Rull  
 [Read paper →](https://doi.org/10.1111/aen.70117)
 :::
 
@@ -88,7 +86,7 @@ through the Sterile Insect Technique (SIT).
 
 :::
 
-### Gene Drives
+#### Gene Drives
 
 ::: {.panel-tabset group="genedrives"}
 
@@ -96,7 +94,7 @@ through the Sterile Insect Technique (SIT).
 
 ::: {.callout-note appearance="minimal"}
 #### A novel polymerase III promoter for gene editing in *Ceratitis capitata* (2026)
-**Researchers:** Amber S. K. Hall, Philip T. Leftwich  
+**Researchers:**  Philip T. Leftwich  
 [Read paper →](https://doi.org/10.64898/2026.04.21.719894)
 :::
 
@@ -104,7 +102,7 @@ through the Sterile Insect Technique (SIT).
 
 ::: {.callout-note appearance="minimal"}
 #### Generating cisgenic sexing strains in insect pests (2026)
-**Researchers:** Serafima Davydova, Angela Meccariello  
+**Researchers:** Angela Meccariello  
 [Read paper →](https://www.nature.com/articles/s42003-026-09624-9)
 :::
 
@@ -116,9 +114,17 @@ through the Sterile Insect Technique (SIT).
 [Read paper →](https://doi.org/10.1111/1744-7917.70173)
 :::
 
+##### Genetic Sexing
+
+::: {.callout-note appearance="minimal"}
+#### Functional validation of a white pupae minimal gene construct in *Ceratitis capitata* (2026)
+**Researchers:** Lucas Henrique Figueiredo Prates, Marc F. Schetelig  
+[Read paper →](https://doi.org/10.1111/1744-7917.70058)
 :::
 
-### SIT
+:::
+
+#### SIT
 
 ::: {.panel-tabset group="sit"}
 
@@ -136,17 +142,9 @@ through the Sterile Insect Technique (SIT).
 [Read paper →](https://doi.org/10.1111/aen.70063)
 :::
 
-##### Genetic Sexing
-
-::: {.callout-note appearance="minimal"}
-#### Functional validation of a white pupae minimal gene construct in *Ceratitis capitata* (2026)
-**Researchers:** Lucas Henrique Figueiredo Prates, Marc F. Schetelig  
-[Read paper →](https://doi.org/10.1111/1744-7917.70058)
 :::
 
-:::
-
-### Insecticide Resistance
+#### Insecticide Resistance
 
 ::: {.callout-note appearance="minimal"}
 #### Reduced fitness cost accounts for the stability of a malathion-resistant heterogeneous duplication haplotype in *Ceratitis capitata* field populations (2026)
@@ -154,7 +152,7 @@ through the Sterile Insect Technique (SIT).
 [Read paper →](https://doi.org/10.1002/ps.71269)
 :::
 
-### Ecology & Behaviour
+#### Ecology & Behaviour
 
 ::: {.panel-tabset group="ecology"}
 
@@ -209,6 +207,12 @@ through the Sterile Insect Technique (SIT).
 :::
 
 ::: {.callout-note appearance="minimal"}
+#### Promising nutritional values of *Anethum graveolens* as a bioinsecticidal agent against *Ceratitis capitata*: attractancy and lethality (2026)
+**Researchers:** Fatma Guesmi, Ahmed Landoulsi  
+[Read paper →](https://doi.org/10.1002/ffj.70062)
+:::
+
+::: {.callout-note appearance="minimal"}
 #### Horizontal and vertical transmission of *Beauveria bassiana*: effects on population growth rates in *Ceratitis capitata* (2026)
 **Researchers:** Salvador Flores, Jorge Toledo  
 [Read paper →](https://doi.org/10.1111/eea.70144)
@@ -225,6 +229,12 @@ through the Sterile Insect Technique (SIT).
 ##### Stress Physiology & Development
 
 ::: {.callout-note appearance="minimal"}
+#### Early-life nutrition shapes adult responses to heat and cold in *Ceratitis capitata* (2026)
+**Researchers:** Georgia Papadogiorgou, Nikos T. Papadopoulos  
+[Read paper →](https://doi.org/10.1017/S0007485326000367)
+:::
+
+::: {.callout-note appearance="minimal"}
 #### Egg-stage desiccation reduces developmental recovery and reveals strain-dependent *Wolbachia*-associated costs in *Ceratitis capitata* (2026)
 **Researchers:** M. Kamilari, A. A. Augustinos  
 [Read paper →](https://doi.org/10.64898/2026.04.21.719827)
@@ -238,7 +248,7 @@ through the Sterile Insect Technique (SIT).
 
 :::
 
-### Methods
+#### Methods
 
 ::: {.panel-tabset group="methods"}
 
@@ -258,7 +268,29 @@ through the Sterile Insect Technique (SIT).
 
 :::
 
-#### Researchers
+#### Nutrition & Reproduction
+
+::: {.panel-tabset group="nutrition"}
+
+##### Phagostimulation & Reproduction
+
+::: {.callout-note appearance="minimal"}
+#### Effects of essential amino acids on phagostimulation and reproduction in adults of the Mediterranean fruit fly (2026)
+**Researchers:** David Nestel, M. Teresa Vera  
+[Read paper →](https://doi.org/10.1111/phen.70063)
+:::
+
+:::
+
+#### Entomophagy & Novel Uses
+
+::: {.callout-note appearance="minimal"}
+#### From pest to food ingredient: quality of *Ceratitis capitata* larvae submitted to different methods of killing and drying (2026)
+**Researchers:** Natasha Spindola Marasca, Vilásia Guimarães Martins  
+[Read paper →](https://doi.org/10.1016/j.ifset.2026.104493)
+:::
+
+### Researchers
 
 ::: {.grid}
 

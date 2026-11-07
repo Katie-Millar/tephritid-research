@@ -1,5 +1,5 @@
 ---
-title: "Tephritidae Research Map — 2026"
+title: "Tephritidae Research Map"
 format:
   html:
     theme: sandstone
@@ -7,306 +7,546 @@ format:
     smooth-scroll: true
 execute:
   echo: false
-  warning: false
-  message: false
 ---
 
-```{r}
-#| label: setup
-library(leaflet)
-library(dplyr)
+```{ojs}
+//| echo: false
 
-institutions <- tibble::tribble(
-  ~name, ~institution, ~lat, ~lon, ~species, ~themes, ~researchers, ~papers,
+L = require("leaflet@1.9.4")
 
-  # B. dorsalis
-  "Huazhong Agricultural University",
-  "Wuhan, China",
-  30.47, 114.36,
-  "Bactrocera dorsalis",
-  "Gut Microbiota · Immune Defence · RNAi",
-  "Hongyu Zhang · Kamil Kabir",
-  5,
+{
+  const link = document.createElement("link")
+  link.rel = "stylesheet"
+  link.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+  document.head.appendChild(link)
+}
 
-  "China Agricultural University",
-  "Beijing, China",
-  40.00, 116.28,
-  "Bactrocera dorsalis",
-  "Gut Microbiota · Life-history · Diet",
-  "Zihua Zhao · Yuxin Yang",
-  4,
+institutions = [
 
-  "Institute of Zoology, CAS",
-  "Beijing, China",
-  39.98, 116.42,
-  "Bactrocera dorsalis",
-  "Sensory Biology · Olfaction",
-  "Guirong Wang · Wei Liu",
-  3,
+  // ── B. dorsalis ──────────────────────────────────────────────────────────
 
-  "South China Agricultural University",
-  "Guangzhou, China",
-  23.16, 113.34,
-  "Bactrocera dorsalis",
-  "Sensory Biology · Species Interactions · Chemosensory",
-  "Yongyue Lu · Saleem Jaffar · Hongbo Jiang",
-  5,
+  { name: "Huazhong Agricultural University",
+    city: "Wuhan, China",
+    lat: 30.47, lon: 114.36,
+    species: "Bactrocera dorsalis",
+    themes: ["Gut Microbiota", "Immune Defence", "RNAi", "Transcriptomics"],
+    researchers: ["Hongyu Zhang", "Kamil Kabir", "Qiuyuan Zhang"],
+    paperList: [
+      { title: "Bactrocera dorsalis and its gut microbiota: an emerging insect model (2026)", url: "https://doi.org/10.3390/insects17070662" },
+      { title: "Cuticle-associated microbiota suppress fungal infection through immune and chemical defences (2026)", url: "https://scijournals.onlinelibrary.wiley.com/doi/10.1002/ps.70704" },
+      { title: "METTL3/METTL14-mediated RNA m6A modification is involved in male reproductive development in B. dorsalis (2026)", url: "https://doi.org/10.1111/1744-7917.13510" }
+    ]
+  },
 
-  "Southwest University",
-  "Chongqing, China",
-  29.82, 106.40,
-  "Bactrocera dorsalis",
-  "Ecotoxicology · Nucleic Acid Pesticides",
-  "Dan-Dan Wei · Changying Niu",
-  3,
+  { name: "China Agricultural University",
+    city: "Beijing, China",
+    lat: 40.00, lon: 116.28,
+    species: "Bactrocera dorsalis",
+    themes: ["Gut Microbiota", "Life-history", "Diet", "Ecotoxicology"],
+    researchers: ["Zihua Zhao", "Yuxin Yang", "Xiaoyun Jia"],
+    paperList: [
+      { title: "Excess sucrose in the larval diet alters gut microbiota and reduces body size and longevity (2026)", url: "https://link.springer.com/article/10.1007/s13744-026-01404-8" },
+      { title: "Gut-microbiota reshaping by oxytetracycline residues threatens life-history traits (2026)", url: "https://www.sciencedirect.com/science/article/abs/pii/S0304389426017681" },
+      { title: "Improving fungal biocontrol of B. dorsalis through binary strain combinations and UV-protective humate formulations (2026)", url: "https://doi.org/10.1002/ps.71247" }
+    ]
+  },
 
-  "Postharvest Technology Research Group",
-  "Sichuan, China",
-  30.66, 104.06,
-  "Bactrocera dorsalis",
-  "Detection & Biosensors",
-  "Tao Wen · Xin Zhang · Xiancheng Ma",
-  2,
+  { name: "Institute of Zoology, CAS",
+    city: "Beijing, China",
+    lat: 39.95, lon: 116.46,
+    species: "Bactrocera dorsalis",
+    themes: ["Sensory Biology", "Olfaction", "Chemosensory Evolution"],
+    researchers: ["Guirong Wang", "Wei Liu"],
+    paperList: [
+      { title: "Asymmetric evolution of antennal cell types underlies a derived ammonia-sensing logic for ecological adaptation in B. dorsalis (2026)", url: "https://doi.org/10.1002/advs.77168" }
+    ]
+  },
 
-  "Royal Museum for Central Africa",
-  "Tervuren, Belgium",
-  50.83, 4.52,
-  "Bactrocera dorsalis",
-  "Gut Microbiota · Phylogenetics · Population Genetics",
-  "Massimiliano Virgilio · Abir Hafsi",
-  2,
+  { name: "South China Agricultural University",
+    city: "Guangzhou, China",
+    lat: 23.16, lon: 113.34,
+    species: "Bactrocera dorsalis",
+    themes: ["Chemosensory", "Olfaction", "Species Interactions", "Detoxification"],
+    researchers: ["Yongyue Lu", "Saleem Jaffar", "Hongbo Jiang"],
+    paperList: [
+      { title: "Understanding the chemosensory and detoxification mechanisms in the oriental fruit fly, B. dorsalis (2026)", url: "https://doi.org/10.3390/insects17040416" },
+      { title: "Resource competition between melon fly, Zeugodacus cucurbitae and oriental fruit fly, B. dorsalis (2026)", url: "https://doi.org/10.3390/insects17090921" },
+      { title: "Enhanced female preference to oviposition cues by mating-induced odorant-binding proteins in B. dorsalis (2026)", url: "https://doi.org/10.1021/acs.jafc.5c12985" }
+    ]
+  },
 
-  "Makerere University",
-  "Kampala, Uganda",
-  0.33, 32.57,
-  "Bactrocera dorsalis",
-  "Distribution & Surveillance",
-  "Denish Oyaro Onen · Jeninah Karungi",
-  1,
+  { name: "Southwest University",
+    city: "Chongqing, China",
+    lat: 29.82, lon: 106.40,
+    species: "Bactrocera dorsalis",
+    themes: ["Ecotoxicology", "Nucleic Acid Pesticides"],
+    researchers: ["Dan-Dan Wei", "Changying Niu"],
+    paperList: [
+      { title: "Cadmium exposure triggers adaptive physiological and molecular responses that undermine development in B. dorsalis (2026)", url: "https://doi.org/10.1016/j.ecoenv.2026.120524" },
+      { title: "Construction of a chitosan nanoparticle-based nucleic acid pesticide system for the control of B. dorsalis (2026)", url: "https://doi.org/10.1007/s10340-025-01984-1" }
+    ]
+  },
 
-  "European Food Safety Authority",
-  "Parma, Italy",
-  44.80, 10.33,
-  "Bactrocera dorsalis",
-  "Distribution & Surveillance",
-  "Daria Rzepecka · Sybren Vos",
-  1,
+  { name: "Postharvest Technology Research Group",
+    city: "Sichuan, China",
+    lat: 30.66, lon: 104.06,
+    species: "Bactrocera dorsalis",
+    themes: ["Detection & Biosensors"],
+    researchers: ["Tao Wen", "Xin Zhang", "Xiancheng Ma"],
+    paperList: [
+      { title: "MOF-enhanced colorimetric sensor array for early detection of citrus infestation by B. dorsalis (2026)", url: "https://doi.org/10.1016/j.postharvbio.2026.114242" },
+      { title: "Hollow ZIF-8-enhanced composite colorimetric sensor array for early visual and nondestructive detection of citrus fruits infested by B. dorsalis (2026)", url: "https://doi.org/10.1016/j.postharvbio.2026.114760" }
+    ]
+  },
 
-  "ECOSUR / National Programme for Fruit Flies",
-  "Chiapas, Mexico",
-  16.75, -93.12,
-  "Bactrocera dorsalis",
-  "Pest Management · Field Control",
-  "Gelana Keno Beyene",
-  1,
+  { name: "Royal Museum for Central Africa",
+    city: "Tervuren, Belgium",
+    lat: 50.83, lon: 4.52,
+    species: "Bactrocera dorsalis",
+    themes: ["Gut Microbiota", "Phylogenetics", "Population Genetics"],
+    researchers: ["Massimiliano Virgilio", "Abir Hafsi"],
+    paperList: [
+      { title: "Gut microbiota are involved in adaptation of B. dorsalis to temperature and diet stressors (2026)", url: "https://hal.science/hal-05774781v1/file/619332.pdf" }
+    ]
+  },
 
-  "National Institute for Agro-Environmental Sciences",
-  "Tsukuba, Japan",
-  36.02, 140.12,
-  "Bactrocera dorsalis",
-  "Dispersal & Migration",
-  "Naoya Hidaka · Akira Otuka",
-  1,
+  { name: "Makerere University",
+    city: "Kampala, Uganda",
+    lat: 0.33, lon: 32.57,
+    species: "Bactrocera dorsalis",
+    themes: ["Distribution & Surveillance"],
+    researchers: ["Denish Oyaro Onen", "Jeninah Karungi"],
+    paperList: [
+      { title: "Bactrocera dorsalis dominance and first report of three Dacus species in Uganda (2026)", url: "https://doi.org/10.1016/j.sciaf.2026.e03286" }
+    ]
+  },
 
-  # C. capitata
-  "University of East Anglia",
-  "Norwich, UK",
-  52.62, 1.24,
-  "Ceratitis capitata",
-  "Gene Drives · CRISPR Tooling",
-  "Philip Leftwich · Tracey Chapman · Amber S.K. Hall",
-  3,
+  { name: "European Food Safety Authority",
+    city: "Parma, Italy",
+    lat: 44.80, lon: 10.33,
+    species: "Bactrocera dorsalis",
+    themes: ["Distribution & Surveillance"],
+    researchers: ["Daria Rzepecka", "Sybren Vos"],
+    paperList: [
+      { title: "Survey parameters to support detection survey design for B. dorsalis (2026)", url: "https://doi.org/10.2903/sp.efsa.2026.EN-10407" }
+    ]
+  },
 
-  "Imperial College London",
-  "London, UK",
-  51.50, -0.18,
-  "Ceratitis capitata",
-  "Gene Drives · Cisgenic Sexing Strains",
-  "Angela Meccariello · Serafima Davydova",
-  2,
+  { name: "National Institute for Agro-Environmental Sciences",
+    city: "Tsukuba, Japan",
+    lat: 36.02, lon: 140.12,
+    species: "Bactrocera dorsalis",
+    themes: ["Dispersal & Migration"],
+    researchers: ["Naoya Hidaka", "Akira Otuka"],
+    paperList: [
+      { title: "Flight characteristics of B. dorsalis associated with long-distance migration (2026)", url: "https://doi.org/10.3390/insects17020203" }
+    ]
+  },
 
-  "University of Thessaly",
-  "Larissa, Greece",
-  39.64, 22.42,
-  "Ceratitis capitata",
-  "Dispersal · Thermal Biology · Gut Microbiota · Development",
-  "Nikos T. Papadopoulos · Georgia Papadogiorgou · Paraschos N. Prekas",
-  7,
+  { name: "Ethiopian Research Group",
+    city: "Ethiopia",
+    lat: 9.14, lon: 40.49,
+    species: "Bactrocera dorsalis",
+    themes: ["Pest Management", "Field Control"],
+    researchers: ["Gelana Keno Beyene", "Gebissa Yigezu"],
+    paperList: [
+      { title: "Integration of insecticides with methyl eugenol-based male annihilation technique trap device (2026)", url: "https://doi.org/10.1155/aia/5346922" }
+    ]
+  },
 
-  "University of Patras",
-  "Patras, Greece",
-  38.29, 21.79,
-  "Ceratitis capitata",
-  "Wolbachia · Stress Physiology · Development",
-  "A.A. Augustinos · M. Kamilari · G. Tsiamis",
-  2,
+  { name: "Huazhong Agricultural University — Wei Lab",
+    city: "Wuhan, China",
+    lat: 30.45, lon: 114.38,
+    species: "Bactrocera dorsalis",
+    themes: ["RNAi", "Pest Control", "Gut Microbiota"],
+    researchers: ["B. Wei", "Y. Liu", "Bing Xie", "Bin Song"],
+    paperList: [
+      { title: "RNAi-mediated immune suppression enhances Serratia marcescens pathogenicity against B. dorsalis (2026)", url: "https://doi.org/10.1007/s10340" },
+      { title: "Novel defensin-like antimicrobial peptides as promising targets for control of B. dorsalis (2026)", url: "https://scijournals.onlinelibrary.wiley.com/doi/10.1002/ps.70805" }
+    ]
+  },
 
-  "USDA-ARS",
-  "Washington DC area, USA",
-  38.89, -77.03,
-  "Ceratitis capitata",
-  "Gut Microbiome Composition · SIT Quality Control · Methods",
-  "Charles J. Mason · Scott M. Geib · Peishih Liang",
-  3,
+  { name: "BdNOX5 Research Group",
+    city: "Nanjing, China",
+    lat: 32.06, lon: 118.79,
+    species: "Bactrocera dorsalis",
+    themes: ["Gut Microbiota", "Gut Homeostasis", "ROS Regulation"],
+    researchers: ["Tian Zeng", "Yi-juan Xu"],
+    paperList: [
+      { title: "BdNOX5 mediates gut microbiota homeostasis via ROS regulation in B. dorsalis (2026)", url: "https://scijournals.onlinelibrary.wiley.com/doi/10.1002/ps.70506" }
+    ]
+  },
 
-  "Çanakkale Onsekiz Mart University",
-  "Çanakkale, Türkiye",
-  40.13, 26.40,
-  "Ceratitis capitata",
-  "Methods · Developmental Biology · Biopesticides",
-  "Tugberk Tuncyurek · Hanife Yandayan Genc · Mevlut Akcura",
-  3,
+  { name: "Olfaction & Behaviour Lab",
+    city: "Shanghai, China",
+    lat: 31.23, lon: 121.47,
+    species: "Bactrocera dorsalis",
+    themes: ["Olfactory Behaviour", "Gut Microbiota"],
+    researchers: ["Muyang He", "Yonghao Lu"],
+    paperList: [
+      { title: "Bacterial-driven odorant receptor expression shifts alter olfactory behaviour in the oriental fruit fly (2026)", url: "https://resjournals.onlinelibrary.wiley.com/doi/full/10.1111/een.70045" }
+    ]
+  },
 
-  "National University of Córdoba / CONICET",
-  "Córdoba, Argentina",
-  -31.42, -64.19,
-  "Ceratitis capitata",
-  "Gut Microbiota · Stress Tolerance · SIT · Holobiont",
-  "Alfonsina Palladini · Juan Rull",
-  5,
+  { name: "Lure & Biocontrol Research Group",
+    city: "Changsha, China",
+    lat: 28.23, lon: 112.94,
+    species: "Bactrocera dorsalis",
+    themes: ["Field Management", "Lure & Infect", "Biocontrol"],
+    researchers: ["Jingpeng Xie", "Fengqin Cao", "Huan Liu", "Lang Fu"],
+    paperList: [
+      { title: "Development and field evaluation of a lure-and-infect strategy integrating attractants with Beauveria bassiana for controlling B. dorsalis (2026)", url: "https://doi.org/10.1007/s10340-026-02054-w" },
+      { title: "Attractancy potential of terpinen-4-ol against B. dorsalis and its synergistic attractant effects evaluation (2026)", url: "https://doi.org/10.1021/acs.jafc.6c01314" }
+    ]
+  },
 
-  "Institution of Biotechnology, Tunisia",
-  "Tunis, Tunisia",
-  36.82, 10.17,
-  "Ceratitis capitata",
-  "SIT · Probiotics · Sterile Male Quality",
-  "Kamel Charaabi · Meriem Msaad Guerfali",
-  1,
+  { name: "Fusarium Biocontrol Lab",
+    city: "Fuzhou, China",
+    lat: 26.07, lon: 119.30,
+    species: "Bactrocera dorsalis",
+    themes: ["Biological Control", "Fungal Pathogens"],
+    researchers: ["Huiqin Li", "Junfu Yu"],
+    paperList: [
+      { title: "Fungal colonization and candidate metabolite-mediated toxicity of Fusarium solani KMZW-1 against adult B. dorsalis (2026)", url: "https://doi.org/10.3389/fmicb.2026.1880895" }
+    ]
+  },
 
-  "Plant Protection Research Institute",
-  "Giza, Egypt",
-  30.01, 31.21,
-  "Ceratitis capitata",
-  "Chemical Ecology",
-  "Ismail R. El-Gendy · Abdelbaky A. Khodair",
-  1,
+  { name: "Courtship Pheromone Lab",
+    city: "Hangzhou, China",
+    lat: 30.27, lon: 120.15,
+    species: "Bactrocera dorsalis",
+    themes: ["Sensory Biology", "Mating Behaviour", "Chemical Ecology"],
+    researchers: ["Yuhua Zhang", "Xin Yi"],
+    paperList: [
+      { title: "N-(3-methylbutyl)acetamide mediates male–male courtship in B. dorsalis through behavioural threshold modulation (2026)", url: "https://doi.org/10.1073/pnas.2605503123" }
+    ]
+  },
 
-  "UC Davis / University of Thessaly",
-  "California, USA",
-  38.54, -121.74,
-  "Ceratitis capitata",
-  "Sleep & Ageing · Life History",
-  "Poorbita Kundu · Hans-Georg Müller",
-  1,
+  // ── C. capitata ──────────────────────────────────────────────────────────
 
-  "Hebrew University of Jerusalem",
-  "Jerusalem, Israel",
-  31.77, 35.20,
-  "Ceratitis capitata",
-  "Dispersal · Ecology · Urban Agriculture",
-  "Carmel Katz · Yafit Cohen · David Nestel",
-  2,
+  { name: "University of East Anglia",
+    city: "Norwich, UK",
+    lat: 52.62, lon: 1.24,
+    species: "Ceratitis capitata",
+    themes: ["Gut Microbiota", "Gene Drives", "CRISPR Tooling"],
+    researchers: ["Philip Leftwich", "Tracey Chapman"],
+    paperList: [
+      { title: "A novel polymerase III promoter for gene editing in Ceratitis capitata (2026)", url: "https://doi.org/10.64898/2026.04.21.719894" }
+    ]
+  },
 
-  "Universidade Federal do Rio Grande",
-  "Rio Grande, Brazil",
-  -32.03, -52.10,
-  "Ceratitis capitata",
-  "Entomophagy & Novel Uses",
-  "Natasha Spindola Marasca · Vilásia Guimarães Martins",
-  1,
+  { name: "Imperial College London",
+    city: "London, UK",
+    lat: 51.50, lon: -0.18,
+    species: "Ceratitis capitata",
+    themes: ["Gene Drives", "Cisgenic Sexing Strains"],
+    researchers: ["Angela Meccariello", "Serafima Davydova"],
+    paperList: [
+      { title: "Generating cisgenic sexing strains in insect pests (2026)", url: "https://www.nature.com/articles/s42003-026-09624-9" }
+    ]
+  },
 
-  "ECOSUR Mexico",
-  "Chiapas, Mexico",
-  16.75, -92.64,
-  "Ceratitis capitata",
-  "Biological Control · Beauveria bassiana",
-  "Salvador Flores · Pablo Liedo · Jorge Toledo",
-  1,
+  { name: "University of Thessaly",
+    city: "Larissa, Greece",
+    lat: 39.64, lon: 22.42,
+    species: "Ceratitis capitata",
+    themes: ["Dispersal", "Thermal Biology", "Gut Microbiota", "Development", "Monitoring"],
+    researchers: ["Nikos T. Papadopoulos", "Georgia Papadogiorgou", "Paraschos N. Prekas", "Eleftheria-Maria D. Bali"],
+    paperList: [
+      { title: "Thermal acclimation and environment drive field dispersal patterns of adult Mediterranean fruit flies (2026)", url: "https://doi.org/10.1111/een.70147" },
+      { title: "Enterobacter-based dietary supplements in both larvae and adult diet affect thermal response of sterile males (2026)", url: "https://www.cambridge.org/core/journals/bulletin-of-entomological-research/article/enterobacterbased-dietary-supplements-in-both-larvae-and-adult-diet-affect-thermal-response-of-sterile-males/A1E682C2632276FCC5F8EE472B13DB0B" },
+      { title: "Impact of hydric stress during pupal development on adult morphology in C. capitata (2026)", url: "https://doi.org/10.1016/j.jinsphys.2026.104989" },
+      { title: "Early-life nutrition shapes adult responses to heat and cold in C. capitata (2026)", url: "https://doi.org/10.1017/S0007485326000367" },
+      { title: "Novel approaches for the detection of low-density Mediterranean fruit fly populations (2026)", url: "https://link.springer.com/article/10.1007/s10530-026-03917-0" },
+      { title: "Enterobacter supplement and ambient conditions determine the performance of sterile male Mediterranean fruit flies (2026)", url: "https://resjournals.onlinelibrary.wiley.com/doi/full/10.1111/phen.70054" }
+    ]
+  },
 
-  "Instituto de Investigación en Biodiversidad y Medioambiente",
-  "Tenerife, Spain",
-  28.46, -16.25,
-  "Ceratitis capitata",
-  "Gene Drives · Sex Determination",
-  "Gennaro Volpe · Giuseppe Saccone",
-  1,
+  { name: "University of Patras",
+    city: "Patras, Greece",
+    lat: 38.29, lon: 21.79,
+    species: "Ceratitis capitata",
+    themes: ["Wolbachia", "Stress Physiology", "Development"],
+    researchers: ["A.A. Augustinos", "M. Kamilari", "G. Tsiamis"],
+    paperList: [
+      { title: "Egg-stage desiccation reduces developmental recovery and reveals strain-dependent Wolbachia-associated costs in C. capitata (2026)", url: "https://doi.org/10.64898/2026.04.21.719827" }
+    ]
+  },
 
-  "Justus Liebig University Giessen",
-  "Giessen, Germany",
-  50.58, 8.68,
-  "Ceratitis capitata",
-  "Gene Drives · White Pupae Construct · SIT",
-  "Lucas Henrique Figueiredo Prates · Marc F. Schetelig",
-  1,
+  { name: "USDA-ARS",
+    city: "USA",
+    lat: 38.89, lon: -77.03,
+    species: "Ceratitis capitata",
+    themes: ["Gut Microbiome", "SIT Quality Control", "Methods"],
+    researchers: ["Charles J. Mason", "Scott M. Geib", "Peishih Liang"],
+    paperList: [
+      { title: "Full-length 16S rRNA gene sequencing resolution reveals variable compositional features of Medfly gut microbiomes (2026)", url: "https://academic.oup.com/ismecommun/advance-article/doi/10.1093/ismeco/ycag292/8898642" },
+      { title: "A rapid and non-destructive method to discriminate irradiated C. capitata using near-infrared spectroscopy (2026)", url: "https://doi.org/10.1093/jee/toae290" }
+    ]
+  },
 
-  "Consejo Superior de Investigaciones Científicas",
-  "Madrid, Spain",
-  40.45, -3.69,
-  "Ceratitis capitata",
-  "Insecticide Resistance",
-  "Rabeh Arouri · Félix Ortego",
-  1
-)
+  { name: "Çanakkale Onsekiz Mart University",
+    city: "Çanakkale, Türkiye",
+    lat: 40.13, lon: 26.40,
+    species: "Ceratitis capitata",
+    themes: ["Methods", "Developmental Biology", "Biopesticides"],
+    researchers: ["Tugberk Tuncyurek", "Hanife Yandayan Genc", "Mevlut Akcura"],
+    paperList: [
+      { title: "Deep learning-based classification of in vivo embryonic development stages in C. capitata using real-time microscopy images (2026)", url: "https://doi.org/10.1002/jez.b.70042" },
+      { title: "Biological and biochemical effects of olive mill wastewater on C. capitata (2026)", url: "https://doi.org/10.1134/S1062359025612935" }
+    ]
+  },
 
-# Colour palette
-pal <- colorFactor(
-  palette = c("#2E7D9E", "#C05C28"),
-  domain  = c("Bactrocera dorsalis", "Ceratitis capitata")
-)
+  { name: "CONICET / National University",
+    city: "Córdoba, Argentina",
+    lat: -31.42, lon: -64.19,
+    species: "Ceratitis capitata",
+    themes: ["Gut Microbiota", "Stress Tolerance", "SIT", "Holobiont"],
+    researchers: ["Alfonsina Palladini", "Juan Rull"],
+    paperList: [
+      { title: "Ceratitis capitata microbiota and its effect on environmental stress tolerance: making flies stronger (2026)", url: "https://doi.org/10.1111/1744-7917.70010" },
+      { title: "Antimicrobial feeding of parental adults reduces offspring tolerance to chemical stress in C. capitata (2026)", url: "https://doi.org/10.1111/aen.70117" },
+      { title: "Holobiont integrity in C. capitata enhances larval development: implications for the sterile insect technique (2026)", url: "https://doi.org/10.1111/aen.70063" },
+      { title: "Dominance of Zygosaccharomyces and shifts in bacterial pathways: effects of antimicrobials on C. capitata microbiome (2026)", url: "https://doi.org/10.1371/journal.pone.0335811" }
+    ]
+  },
 
-# Popup HTML
-institutions <- institutions |>
-  mutate(popup = paste0(
-    "<div style='font-family:sans-serif;min-width:220px;max-width:280px'>",
-    "<div style='font-weight:700;font-size:0.95rem;margin-bottom:4px'>",
-    name, "</div>",
-    "<div style='color:#555;font-size:0.82rem;margin-bottom:6px'>", institution, "</div>",
-    "<hr style='margin:6px 0;border-color:#ddd'>",
-    "<div style='margin-bottom:4px'>",
-    "<span style='background:", pal(species), ";color:#fff;",
-    "border-radius:4px;padding:2px 7px;font-size:0.75rem;font-style:italic'>",
-    species, "</span></div>",
-    "<div style='font-size:0.8rem;margin-top:6px'>",
-    "<b>Research themes</b><br>",
-    gsub(" · ", "<br>· ", themes),
-    "</div>",
-    "<div style='font-size:0.8rem;margin-top:6px'>",
-    "<b>Key researchers</b><br>",
-    gsub(" · ", "<br>· ", researchers),
-    "</div>",
-    "<div style='font-size:0.78rem;color:#777;margin-top:6px'>",
-    papers, " paper", ifelse(papers == 1, "", "s"), " in database (2026)",
-    "</div>",
-    "</div>"
-  ))
+  { name: "Institution of Biotechnology",
+    city: "Tunis, Tunisia",
+    lat: 36.82, lon: 10.17,
+    species: "Ceratitis capitata",
+    themes: ["SIT", "Probiotics", "Sterile Male Quality"],
+    researchers: ["Kamel Charaabi", "Meriem Msaad Guerfali"],
+    paperList: [
+      { title: "Probiotic modulation of gut microbiota enhances immunity and nutrition in SIT C. capitata sterile males (2026)", url: "https://doi.org/10.1007/s00248-026-02754-x" }
+    ]
+  },
 
-leaflet(institutions,
-        options = leafletOptions(minZoom = 2, maxZoom = 10)) |>
-  addProviderTiles(providers$CartoDB.Positron) |>
-  addCircleMarkers(
-    lng        = ~lon,
-    lat        = ~lat,
-    radius     = ~scales::rescale(papers, to = c(7, 20)),
-    color      = ~pal(species),
-    fillColor  = ~pal(species),
-    fillOpacity = 0.75,
-    weight     = 2,
-    opacity    = 1,
-    popup      = ~popup,
-    label      = ~name,
-    labelOptions = labelOptions(
-      style     = list("font-weight" = "bold", padding = "4px 8px"),
-      textsize  = "13px",
-      direction = "auto"
-    )
-  ) |>
-  addLegend(
-    position = "bottomleft",
-    pal      = pal,
-    values   = ~species,
-    title    = "Species",
-    opacity  = 0.85,
-    labFormat = labelFormat(transform = function(x) paste0("<em>", x, "</em>"))
-  ) |>
-  addControl(
-    html = paste0(
-      "<div style='background:#fff;padding:8px 12px;border-radius:6px;",
-      "border:1px solid #ccc;font-family:sans-serif;font-size:0.78rem;color:#555'>",
-      "<b>Bubble size</b> = number of 2026 papers<br>",
-      "<b>Click</b> a bubble to see researchers and themes",
-      "</div>"
-    ),
-    position = "topright"
-  ) |>
-  setView(lng = 30, lat = 30, zoom = 2)
+  { name: "Plant Protection Research Institute",
+    city: "Giza, Egypt",
+    lat: 30.01, lon: 31.21,
+    species: "Ceratitis capitata",
+    themes: ["Chemical Ecology"],
+    researchers: ["Ismail R. El-Gendy", "Abdelbaky A. Khodair"],
+    paperList: [
+      { title: "Chemical profile of the Mediterranean fruit fly C. capitata collected from different agricultural Egyptian systems (2026)", url: "https://doi.org/10.21608/jpces.2026.510311.1016" }
+    ]
+  },
+
+  { name: "UC Davis / University of Thessaly",
+    city: "California, USA",
+    lat: 38.54, lon: -121.74,
+    species: "Ceratitis capitata",
+    themes: ["Sleep & Ageing", "Life History"],
+    researchers: ["Poorbita Kundu", "Hans-Georg Müller"],
+    paperList: [
+      { title: "Sleep bout length and nighttime activity predict longevity in medflies (2026)", url: "https://doi.org/10.1038/s41514-026-00481-8" }
+    ]
+  },
+
+  { name: "Hebrew University of Jerusalem",
+    city: "Jerusalem, Israel",
+    lat: 31.77, lon: 35.20,
+    species: "Ceratitis capitata",
+    themes: ["Dispersal", "Urban Agriculture", "Ecology", "Reproduction"],
+    researchers: ["Carmel Katz", "Yafit Cohen", "David Nestel"],
+    paperList: [
+      { title: "Urban-agricultural interface: assessing the effect of urban habitat characteristics on the occurrence of the Mediterranean fruit fly in peri-urban citrus orchards (2026)", url: "https://link.springer.com/article/10.1007/s10340-025-01968-1" },
+      { title: "Effects of essential amino acids on phagostimulation and reproduction in adults of the Mediterranean fruit fly (2026)", url: "https://doi.org/10.1111/phen.70063" }
+    ]
+  },
+
+  { name: "Universidade Federal do Rio Grande",
+    city: "Rio Grande, Brazil",
+    lat: -32.03, lon: -52.10,
+    species: "Ceratitis capitata",
+    themes: ["Entomophagy & Novel Uses"],
+    researchers: ["Natasha Spindola Marasca", "Vilásia Guimarães Martins"],
+    paperList: [
+      { title: "From pest to food ingredient: quality of C. capitata larvae submitted to different methods of killing and drying (2026)", url: "https://doi.org/10.1016/j.ifset.2026.104493" }
+    ]
+  },
+
+  { name: "ECOSUR Mexico",
+    city: "Chiapas, Mexico",
+    lat: 16.75, lon: -92.64,
+    species: "Ceratitis capitata",
+    themes: ["Biological Control", "Beauveria bassiana"],
+    researchers: ["Salvador Flores", "Pablo Liedo", "Jorge Toledo"],
+    paperList: [
+      { title: "Horizontal and vertical transmission of Beauveria bassiana: effects on population growth rates in C. capitata (2026)", url: "https://doi.org/10.1111/eea.70144" }
+    ]
+  },
+
+  { name: "University of Naples / CNR",
+    city: "Naples, Italy",
+    lat: 40.85, lon: 14.27,
+    species: "Ceratitis capitata",
+    themes: ["Gene Drives", "Sex Determination"],
+    researchers: ["Gennaro Volpe", "Giuseppe Saccone"],
+    paperList: [
+      { title: "DsiRNA-mediated silencing of C. capitata transformer or transformer-2 leads to masculinisation of XX embryos and systemic gene silencing in ovaries (2026)", url: "https://doi.org/10.1111/1744-7917.70173" }
+    ]
+  },
+
+  { name: "Justus Liebig University Giessen",
+    city: "Giessen, Germany",
+    lat: 50.58, lon: 8.68,
+    species: "Ceratitis capitata",
+    themes: ["Gene Drives", "White Pupae Construct", "SIT"],
+    researchers: ["Lucas H.F. Prates", "Marc F. Schetelig"],
+    paperList: [
+      { title: "Functional validation of a white pupae minimal gene construct in C. capitata (2026)", url: "https://doi.org/10.1111/1744-7917.70058" }
+    ]
+  },
+
+  { name: "CSIC",
+    city: "Madrid, Spain",
+    lat: 40.45, lon: -3.69,
+    species: "Ceratitis capitata",
+    themes: ["Insecticide Resistance"],
+    researchers: ["Rabeh Arouri", "Félix Ortego"],
+    paperList: [
+      { title: "Reduced fitness cost accounts for the stability of a malathion-resistant heterogeneous duplication haplotype in C. capitata field populations (2026)", url: "https://doi.org/10.1002/ps.71269" }
+    ]
+  },
+
+  { name: "Biopesticides & Lure Research",
+    city: "Sfax, Tunisia",
+    lat: 34.74, lon: 10.76,
+    species: "Ceratitis capitata",
+    themes: ["Biopesticides", "Attractancy"],
+    researchers: ["Fatma Guesmi", "Ahmed Landoulsi"],
+    paperList: [
+      { title: "Promising nutritional values of Anethum graveolens as a bioinsecticidal agent against C. capitata: attractancy and lethality (2026)", url: "https://doi.org/10.1002/ffj.70062" }
+    ]
+  }
+]
+
+colourFor = (species) => species === "Bactrocera dorsalis" ? "#2E7D9E" : "#C05C28"
+
+popupFor = (d) => `
+  <div style="font-family:sans-serif;min-width:240px;max-width:310px;font-size:13px">
+    <div style="background:${colourFor(d.species)};margin:-1px -1px 0;padding:10px 12px;border-radius:4px 4px 0 0">
+      <div style="font-weight:700;font-size:14px;color:#fff">${d.name}</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.8);margin-top:2px">${d.city}</div>
+    </div>
+    <div style="padding:10px 12px">
+      <div style="font-style:italic;font-size:12px;color:${colourFor(d.species)};margin-bottom:8px">${d.species}</div>
+      <div style="margin-bottom:8px">
+        <div style="font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:#888;margin-bottom:3px">Research themes</div>
+        ${d.themes.map(t => `<span style="display:inline-block;background:#f0f0f0;border-radius:3px;padding:1px 6px;font-size:11px;margin:1px 2px 1px 0">${t}</span>`).join("")}
+      </div>
+      <div style="margin-bottom:8px">
+        <div style="font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:#888;margin-bottom:3px">Principal Investigators</div>
+        ${d.researchers.map(r => `<div style="font-size:12px">· ${r}</div>`).join("")}
+      </div>
+      <div>
+        <div style="font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:#888;margin-bottom:3px">Papers (${d.paperList.length})</div>
+        ${d.paperList.map(p =>
+          `<div style="margin-bottom:3px">· <a href="${p.url}" target="_blank"
+             style="color:#2E7D9E;text-decoration:none;font-size:11px;line-height:1.5">${p.title}</a></div>`
+        ).join("")}
+      </div>
+    </div>
+  </div>`
+
+{
+  // ── filter bar ──
+  const bar = html`<div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+    <button id="btn-all"  style="padding:5px 14px;border-radius:4px;border:1px solid #2E7D9E;background:#2E7D9E;color:#fff;cursor:pointer;font-size:13px">All</button>
+    <button id="btn-bd"   style="padding:5px 14px;border-radius:4px;border:1px solid #2E7D9E;background:#fff;color:#2E7D9E;cursor:pointer;font-size:13px">🪰 <em>B. dorsalis</em></button>
+    <button id="btn-cc"   style="padding:5px 14px;border-radius:4px;border:1px solid #C05C28;background:#fff;color:#C05C28;cursor:pointer;font-size:13px">🪰 <em>C. capitata</em></button>
+    <span style="margin-left:auto;font-size:12px;color:#888;align-self:center">${institutions.length} institutions · click a marker for papers</span>
+  </div>`
+  yield bar
+
+  // ── map ──
+  const container = DOM.element("div", {
+    style: "height:580px;width:100%;border-radius:8px;overflow:hidden;border:1px solid #ddd"
+  })
+  yield container
+
+  const map = L.map(container, { center: [25, 20], zoom: 2, minZoom: 1 })
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap contributors", maxZoom: 19
+  }).addTo(map)
+
+  const markers = []
+
+  institutions.forEach(d => {
+    const size = 28 + d.paperList.length * 4
+    const icon = L.divIcon({
+      html: `<div style="
+        width:${size}px;height:${size}px;
+        background:${colourFor(d.species)};
+        border-radius:50%;border:2.5px solid #fff;
+        box-shadow:0 2px 8px rgba(0,0,0,0.25);
+        display:flex;align-items:center;justify-content:center;
+        font-size:${size * 0.52}px;line-height:1">🪰</div>`,
+      className: "", iconSize: [size, size],
+      iconAnchor: [size/2, size/2], popupAnchor: [0, -(size/2)]
+    })
+    const m = L.marker([d.lat, d.lon], { icon })
+      .bindPopup(popupFor(d), { maxWidth: 330 })
+      .bindTooltip(`<strong>${d.name}</strong><br><em style="font-size:11px">${d.city}</em>`,
+        { direction: "top", offset: [0, -(size/2)] })
+    m._species = d.species
+    m.addTo(map)
+    markers.push(m)
+  })
+
+  // filter logic
+  function setFilter(sp) {
+    markers.forEach(m => {
+      if (!sp || m._species === sp) m.addTo(map)
+      else map.removeLayer(m)
+    })
+  }
+
+  bar.querySelector("#btn-all").onclick = () => {
+    setFilter(null)
+    bar.querySelectorAll("button").forEach(b => {
+      b.style.background = "#fff"; b.style.color = "#555"; b.style.borderColor = "#ccc"
+    })
+    const b = bar.querySelector("#btn-all")
+    b.style.background = "#2E7D9E"; b.style.color = "#fff"; b.style.borderColor = "#2E7D9E"
+  }
+  bar.querySelector("#btn-bd").onclick = () => {
+    setFilter("Bactrocera dorsalis")
+    bar.querySelectorAll("button").forEach(b => {
+      b.style.background = "#fff"; b.style.color = "#555"; b.style.borderColor = "#ccc"
+    })
+    const b = bar.querySelector("#btn-bd")
+    b.style.background = "#2E7D9E"; b.style.color = "#fff"; b.style.borderColor = "#2E7D9E"
+  }
+  bar.querySelector("#btn-cc").onclick = () => {
+    setFilter("Ceratitis capitata")
+    bar.querySelectorAll("button").forEach(b => {
+      b.style.background = "#fff"; b.style.color = "#555"; b.style.borderColor = "#ccc"
+    })
+    const b = bar.querySelector("#btn-cc")
+    b.style.background = "#C05C28"; b.style.color = "#fff"; b.style.borderColor = "#C05C28"
+  }
+
+  // legend
+  const legend = L.control({ position: "bottomleft" })
+  legend.onAdd = () => {
+    const div = L.DomUtil.create("div")
+    div.innerHTML = `
+      <div style="background:#fff;padding:10px 14px;border-radius:6px;
+        border:1px solid #ccc;font-family:sans-serif;font-size:12px;line-height:1.9">
+        <div style="font-weight:700;margin-bottom:4px">Species</div>
+        <div><span style="display:inline-flex;align-items:center;justify-content:center;
+          width:20px;height:20px;border-radius:50%;background:#2E7D9E;
+          margin-right:6px;font-size:12px">🪰</span><em>B. dorsalis</em></div>
+        <div><span style="display:inline-flex;align-items:center;justify-content:center;
+          width:20px;height:20px;border-radius:50%;background:#C05C28;
+          margin-right:6px;font-size:12px">🪰</span><em>C. capitata</em></div>
+        <div style="margin-top:6px;color:#888;font-size:11px">Bubble size = paper count</div>
+      </div>`
+    return div
+  }
+  legend.addTo(map)
+}
 ```
